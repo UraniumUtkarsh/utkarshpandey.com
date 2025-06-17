@@ -87,13 +87,6 @@
       text-decoration: none;
       font-size: 1.5rem;
     }
-    iframe {
-      width: 100%;
-      max-width: 640px;
-      height: 645px;
-      border: none;
-      margin-top: 1rem;
-    }
     @media (max-width: 600px) {
       .section {
         padding: 3rem 1rem;
@@ -112,12 +105,12 @@
       margin: 0 auto;
     }
     #terminal-container {
-  border: 2px solid #0f0;
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 820px;
-  margin: 2rem auto;
-}
+      border: 2px solid #0f0;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 820px;
+      margin: 2rem auto;
+    }
     .output {
       white-space: pre-wrap;
       margin-bottom: 1em;
@@ -174,6 +167,7 @@
 
 <div class="top-taskbar">
   <div class="left-section">🔒 Terminal Commands</div>
+  Try typing these commands inside terminal window 👉
   <div class="right-section">
     <a>About</a>
     <a>Projects</a>
@@ -184,7 +178,7 @@
 </div>
 <br>
 <br>
-<p><center>"The hacker’s best weapon is a keyboard, not a touchscreen. For the full experience, deploy a laptop."</center></p>
+<h4><center>"The hacker’s best weapon is a keyboard, not a touchscreen. For the full experience, deploy a laptop."</center></h4>
 <div id="terminal-container">  
   <div id="terminal">
     <div class="output">Welcome to <span style="color:#0f0">utkarsh@portfolio</span> terminal</div>
@@ -211,31 +205,62 @@ Available commands:
   contact       → Show contact info
   clear         → Clear the terminal
 `,
+      whoami: `
+      Name: Utkarsh Pandey
+      Course: BTech CSE with specialization in Cyber Security
+      Year: 4th | Semester: 7th
+      Roll no: 202210101180005
+      University: Shri Ramswaroop Memorial University
+      Place: Lucknow
+      `,
+      prakhar:`
+      Place: Jankipuram, Lucknow
+      Education: BTech CSE Cybersecurity
+      University: Shri Ramswaroop Memorial University
+      
+      Title: Cyber-Buddy`
+      ,
+      sachin:`
+      Place: Kalli, Lucknow
+      Education: BTech CSE Cloud AI
+      University: Shri Ramswaroop Memorial University
+      
+      Title: WebDev-Buddy`,
+      ashutosh:`
+      Place: Tindola, Barabanki
+      Education: BTech CSE Cybersecurity
+      University: Shri Ramswaroop Memorial University
+      
+      Title: Blockchain-Buddy`,     
       about: `
 Name: Utkarsh Pandey
-Role: Cybersecurity Enthusiast & Ethical Hacker
+Role: Cybersecurity Enthusiast
 About: Passionate about securing systems, breaking to learn, and coding to protect.
 Currently pursuing B.Tech in CSE with specialization in Cybersecurity.
 `,
       projects: `
-> SteganoSphere
+> SteganographySecure
   ↳ Web-based steganography tool using Flask & LSB.
 
-> NiyuktiSure
+> NiyuktiSure (Ongoing)
   ↳ HRMS app with resume scoring & job tracking.
 
 > WiFrax
   ↳ Offline WiFi attack simulation toolkit (Bash + Python).
 
-> ShellFetch
-  ↳ Custom terminal info fetcher written in Bash.
+> PortfolioTerminal
+  ↳ Custom terminal info fetcher styled portfolio.
+  ↳ You are currently viewing the same
 `,
       skills: `
 > Offensive Security
   ↪ Pentesting, Metasploit, Nmap, Kali
 
+> Defensive Security
+  ↪ MITRE ATT&CK, Firewalls, Identity and Access Management
+
 > Scripting & Tools
-  ↪ Python, Bash, Burp Suite, Git, Wireshark
+  ↪ Python, Bash, Batch file, Burp Suite, Git, Wireshark
 
 > Web/Dev
   ↪ HTML, CSS, JS (Basic), Django, Flask
@@ -274,12 +299,6 @@ LinkedIn: https://linkedin.com/in/uraniumutkarsh
       }
     });
   </script>
-  
-
-  <!--<div class="section" id="contact">
-    <h2>Contact</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkR_LA1mPrRkLkyTIJs1B5U7R3aSwh84b-d-tJClGm1JVSyg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </div>-->
 
   <nav class="bottom-nav">
     <div class="start-button">
@@ -289,14 +308,15 @@ LinkedIn: https://linkedin.com/in/uraniumutkarsh
       <a href="https://linkedin.com/in/uranium-utkarsh-pandey">LinkedIn</a>
       <a href="https://github.com/UraniumUtkarsh">GitHub</a>
       <a href="mailto:portfolio+utkarshpandey_202210101180005@srmu.ac.in">Email-Us</a>
+      <a href="Contact-Us.html">Queries</a>
     </div>
     <div class="datetime" id="datetime"></div>
   </nav>
 
   <!--<div class="fixed-social">
-    <a href="https://github.com" target="_blank">GitHub</a>
-    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-    <a href="mailto:hacker@example.com">@</a>
+    <a href="https://github.com" target="_blank"><img src="images/github.png"></a>
+    <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.png"></a>
+    <a href="mailto:utkarshpandey_202210101180005@srmu.ac.in"><img src="images/email.png"></a>
   </div>-->
 
   <img src="images/myself_new.png" alt="Utkarsh Pandey" id="popupImage" class="enlarged-image">
