@@ -88,7 +88,7 @@
       .rightSection img {
         width: 22vw;
         border-radius: 50%;
-        border: 20px solid;
+        border: 15px solid;
         border-color: white;
       }
       .secondSection {
@@ -116,7 +116,8 @@
         height: 90px;
         width: 1px;
         background-color: white;
-        margin: 0px 100px; /*tweak this padding to adjust for the work experiences in vertical class*/
+        margin: 0px 5vw; /*tweak this padding to adjust for the work experiences in vertical class*/
+        /* changing margin, can change position of verticals like L- Center -R */
       }
 
       /*Utility CSS Classes*/
@@ -177,6 +178,89 @@
         color: grey;
         padding: 12px 0;
       }
+
+      /* Responsive Webpage */
+      @media screen and (max-width: 720px) {
+        nav {
+        }
+        body {
+          min-width: fit-content;
+          /* auto adjusts body content in responsive-page to size of the device's screen */
+        }
+        .box {
+          flex-direction: column;
+        }
+        .firstSection {
+          flex-direction: column-reverse;
+        }
+        .secondSection .vertical {
+          height: unset;
+        }
+        /* selecting both vertical title and desc and adding left padding altogether */
+        .vertical-title,
+        .vertical-desc {
+          left: 40px;
+        }
+        .secondSection .box {
+          width: 90vw; /*50vw --> 90vw*/
+        }
+        nav {
+          flex-direction: column;
+        }
+        .leftSection {
+          width: 100% !important;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .rightSection {
+          width: 72px !important;
+          display: flex;
+          justify-content: center;
+        }
+        /* .rightSection img {
+          width: 45vw;
+          margin-bottom: 73px;
+        } */
+        .rightSection img {
+          border: 7px solid;
+          max-width: 100%;
+          height: auto;
+        }
+        nav ul li {
+          margin: 5px 10px;
+        }
+        nav ul li a {
+          font-size: medium;
+        }
+
+        .secondSection {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 1200px;
+        }
+        .image-top {
+          top: 100px;
+          /* adjusts vertical icons in work experience with the vertical titles and descs */
+        }
+        /* ChatGPT Suggests */
+        .footer {
+          flex-direction: column;
+          padding: 20px;
+          align-items: center;
+        }
+        .footer > div,
+        .footer ul {
+          width: auto;
+          margin-bottom: 15px;
+        }
+        .footer-fourth iframe {
+          width: 90vw;
+          height: auto;
+        }
+      }
     </style>
   </head>
   <!--Comments-->
@@ -194,7 +278,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/">About</a></li>
             <li><a href="/">Projects</a></li>
-            <li><a href="/">Blogs</a></li>
+            <li><a href="https://utkarshblogs14.blogspot.com">Blogs</a></li>
             <li><a href="/">Contact Me</a></li>
           </ul>
         </div>
@@ -207,7 +291,7 @@
         the overall layout of the page-->
         <!-- Element to contain animated typing -->
         <div class="leftSection">
-          Hi, my name is <span class="purple">Utkarsh</span>
+          <div>Hi, my name is <span class="purple">Utkarsh</span></div>
           <div>and I am a passionate</div>
           <span id="element"></span>
           <div class="buttons">
@@ -273,24 +357,6 @@
               libero aut.
             </div>
           </div>
-          <div class="vertical">
-            <img class="image-top" src="/images/developer.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-              non. Minus at ipsam repellat molestiae numquam maxime quisquam
-              libero aut.
-            </div>
-          </div>
-          <div class="vertical">
-            <img class="image-top" src="/images/developer.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
-            <div class="vertical-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-              non. Minus at ipsam repellat molestiae numquam maxime quisquam
-              libero aut.
-            </div>
-          </div>
         </div>
       </section>
     </main>
@@ -311,22 +377,26 @@
         </ul>
         <div class="footer-third">
           <ul>
-            <li>Home</li>
-            <li>Blog</li>
-            <li>Projects</li>
-            <li>Live-Project</li>
+            <li>X</li>
+            <li>Linkedin</li>
+            <li>Github</li>
+            <li></li>
             <li>E-mail</li>
             <li>Phone</li>
           </ul>
         </div>
         <div class="footer-fourth">
           <ul>
-            <li>Home</li>
-            <li>Blog</li>
-            <li>Projects</li>
-            <li>Live-Project</li>
-            <li>E-mail</li>
-            <li>Phone</li>
+            <li>Location</li>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.4816770959346!2d81.0955250741511!3d26.951641758418866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995ee81add328f%3A0xbe8acc99218572c9!2sShri%20Ramswaroop%20Memorial%20University%20(SRMU)!5e0!3m2!1sen!2sin!4v1751921502472!5m2!1sen!2sin"
+              width="300px"
+              height="160px"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </ul>
         </div>
       </div>
