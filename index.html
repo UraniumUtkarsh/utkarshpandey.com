@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Utkarsh's Portfolio</title>
+    <link rel="icon" type="image/png" href="/images/myself.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,6 +48,7 @@
       }
       .left {
         font-size: 1.5rem;
+        letter-spacing: 2px;
       }
       .firstSection {
         display: flex;
@@ -107,16 +109,16 @@
             */
       .secondSection .box {
         height: 2px;
-        width: 80vw;
+        width: 60vw;
         background-color: white;
-        margin: 40px 0px;
+        margin: 40px 225px;
         display: flex; /*using flex so that all ther verticals don't overlap upon each other*/
       }
       .secondSection .vertical {
         height: 90px;
         width: 1px;
         background-color: white;
-        margin: 0px 5vw; /*tweak this padding to adjust for the work experiences in vertical class*/
+        margin: 0px 6vw; /*tweak this padding to adjust for the work experiences in vertical class*/
         /* changing margin, can change position of verticals like L- Center -R */
       }
 
@@ -166,6 +168,16 @@
         display: flex;
         padding: 23px 122px;
         justify-content: space-evenly;
+      }
+      footer .footer-second ul {
+        display: flex;
+        justify-content: center;
+        margin: 0px 30px;
+      }
+      footer .footer-second ul li {
+        list-style: none;
+        margin: 0px 30px;
+        padding: 0 10px;
       }
       .footer ul {
         list-style: none;
@@ -239,7 +251,7 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          height: 1200px;
+          height: 1500px;
         }
         .image-top {
           top: 100px;
@@ -256,6 +268,7 @@
           width: auto;
           margin-bottom: 15px;
         }
+
         .footer-fourth iframe {
           width: 90vw;
           height: auto;
@@ -275,11 +288,10 @@
         <div class="left">Utkarsh's Portfolio</div>
         <div class="right">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">About</a></li>
-            <li><a href="/">Projects</a></li>
+            <li><a href="/about-me.html">About</a></li>
+            <li><a href="/terminal-folio.html">Terminal-Folio</a></li>
             <li><a href="https://utkarshblogs14.blogspot.com">Blogs</a></li>
-            <li><a href="/">Contact Me</a></li>
+            <li><a href="#connect-me">Contact Me</a></li>
           </ul>
         </div>
       </nav>
@@ -295,7 +307,9 @@
           <div>and I am a passionate</div>
           <span id="element"></span>
           <div class="buttons">
-            <a href=""><button class="btn">Download Resume</button></a>
+            <a href="/assets/CV_UTKARSH_PANDEY_BTech_CSE_CyberSecurity.docx"
+              ><button class="btn">Download Resume</button></a
+            >
             <a href="https://github.com/UraniumUtkarsh/" target="_blank"
               ><button class="btn">Visit Github</button></a
             >
@@ -311,50 +325,61 @@
       <section class="secondSection">
         <span class="text-grey">What I have experienced so far</span>
         <h1>Work Experience</h1>
+
         <div class="box">
           <div class="vertical">
             <img class="image-top" src="/images/developer.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
+            <div class="vertical-title">
+              Technical Club Assistant Coordinator <i>(Jul 2023 - Oct 2024)</i>
+            </div>
             <div class="vertical-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-              non. Minus at ipsam repellat molestiae numquam maxime quisquam
-              libero aut.
+              Managed event logistics, scheduling, coordination, and participant
+              registration. Created and distributed event-related documentation
             </div>
           </div>
           <div class="vertical">
             <img class="image-top" src="/images/developer.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
+            <div class="vertical-title">
+              Tech Fest Co-Convener <i>(Apr 2024)</i>
+            </div>
             <div class="vertical-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-              non. Minus at ipsam repellat molestiae numquam maxime quisquam
-              libero aut.
+              Led VIVEKA Techfest 3.0 event planning and execution and automated
+              event processes using Python and enhanced event management
+              efficiency.
             </div>
           </div>
           <div class="vertical">
             <img class="image-top" src="/images/developer.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
+            <div class="vertical-title">
+              IEEE SRMU Stdnt Branch Volunteer <i>(Jul 2024 - Dec 2024)</i>
+            </div>
             <div class="vertical-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-              non. Minus at ipsam repellat molestiae numquam maxime quisquam
-              libero aut.
+              Proficient in using vTools for event management and reporting.
+              Organized technical events like workshops, coding competitions,
+              and seminars.
             </div>
           </div>
           <div class="vertical">
             <img class="image-top" src="/images/developer.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
+            <div class="vertical-title">
+              TechnoHacks Cybersecurity Red-Teaming Internship
+              <i>(Jun 2024 - Jul 2024)</i>
+            </div>
             <div class="vertical-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-              non. Minus at ipsam repellat molestiae numquam maxime quisquam
-              libero aut.
+              Hands-on experience with Kali Linux tools for OSINT, phishing,
+              penetration testing, and vulnerability assessment. Led
+              documentation, streamlined internal communication.
             </div>
           </div>
           <div class="vertical">
             <img class="image-top" src="/images/developer.png" alt="" />
-            <div class="vertical-title">HTML Developer (2010-2012)</div>
+            <div class="vertical-title">
+              AICTE & IBM-SkillsBuild Cybersecurity Internship
+              <i>(Jan 2025 - Feb 2025)</i>
+            </div>
             <div class="vertical-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-              non. Minus at ipsam repellat molestiae numquam maxime quisquam
-              libero aut.
+              Gained experience in Cryptography, Network Security, Python,
+              Problem-Solving, and Steganography (LSB approach)
             </div>
           </div>
         </div>
@@ -364,40 +389,37 @@
     <footer>
       <div class="footer">
         <div class="footer-first">
-          <h3>Utkarsh's Portfolio</h3>
+          <h3>Let's Connect with Me</h3>
         </div>
-        <div class="footer-second"></div>
-        <ul>
-          <li>Home</li>
-          <li>Blog</li>
-          <li>Projects</li>
-          <li>Live-Project</li>
-          <li>E-mail</li>
-          <li>Phone</li>
-        </ul>
-        <div class="footer-third">
+        <div class="footer-second"><section id="connect-me">
           <ul>
-            <li>X</li>
-            <li>Linkedin</li>
-            <li>Github</li>
-            <li></li>
-            <li>E-mail</li>
-            <li>Phone</li>
-          </ul>
-        </div>
-        <div class="footer-fourth">
-          <ul>
-            <li>Location</li>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.4816770959346!2d81.0955250741511!3d26.951641758418866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995ee81add328f%3A0xbe8acc99218572c9!2sShri%20Ramswaroop%20Memorial%20University%20(SRMU)!5e0!3m2!1sen!2sin!4v1751921502472!5m2!1sen!2sin"
-              width="300px"
-              height="160px"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </ul>
+            <li>
+              <a href="https://www.linkedin.com/in/uranium-utkarsh-pandey"
+                ><img src="/icons/linkedin.png" alt="Linkedin"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.github.com/UraniumUtkarsh"
+                ><img src="/icons/github.png" alt="Github"
+              /></a>
+            </li>
+            <li>
+              <a href="mailto:utkarshpandey_202210101180005@srmu.ac.in"
+                ><img src="/icons/email.png" alt="Email"
+              /></a>
+            </li>
+            <li>
+              <a href="https://x.com/UraniumUtkarsh"
+                ><img src="/icons/x-logo.png" alt="Twitter"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfkR_LA1mPrRkLkyTIJs1B5U7R3aSwh84b-d-tJClGm1JVSyg/viewform?usp=dialog"
+                ><img src="/icons/forms.png" alt="Message for me"
+              /></a>
+            </li>
+          </ul></section>
         </div>
       </div>
       <div class="footer-rights">
