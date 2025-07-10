@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utkarsh's Portfolio | About-Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;
+      0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 72px;
+        background-color: #cc2901;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        list-style: none;
+        margin: 0 30px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: large;
+      }
+      nav ul li a:hover {
+        color: #ff9a3b;
+        font-size: 1.1rem;
+      }
+      .left {
+        font-size: 1.5rem;
+      }
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        margin: 110px 0;
+        align-items: center;
+      }
+      .firstSection > div {
+        width: 30%;
+      }
+      .leftSection {
+        width: 50%;
+        font-size: 2.5rem;
+      }
+
+      .leftSection .buttons {
+        padding: 50px 0;
+      }
+
+      .leftSection .btn {
+        background-color: #cc2901;
+        color: white;
+        padding: 12px 12px;
+        border: 2px solid;
+        border-radius: 25px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .leftSection .btn a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .rightSection img {
+        width: 22vw;
+        border-radius: 50%;
+        border: 15px solid;
+        border-color: white;
+      }
+      .secondSection {
+        max-width: 80vw;
+        margin: auto;
+        height: 80vh;
+      }
+      .secondSection h1 {
+        font-size: 1.8rem;
+      }
+      .secondSection .box {
+        height: 2px;
+        width: 50vw;
+        background-color: white;
+        margin: 40px 225px;
+        display: flex; 
+      }
+      .secondSection .vertical {
+        height: 90px;
+        width: 1px;
+        background-color: white;
+        margin: 0px 5vw;
+      }
+
+      /*Utility CSS Classes*/
+      .purple {
+        color: #fd5025;
+      }
+      .text-grey {
+        color: rgba(128, 128, 128, 0.726);
+      }
+      .image-top {
+        width: 23px;
+        position: relative; /*changes the position of the HTML element relative to where it normally appears*/
+        top: -28px;
+        left: -11px;
+      }
+      .vertical-title {
+        position: relative;
+        top: 70px;
+        width: 155px;
+      }
+      .vertical-desc {
+        position: relative;
+        top: 80px;
+        color: grey;
+        width: 150px;
+        font-size: 15px;
+      }
+
+      #element {
+        color: #fd5025;
+      }
+
+      main hr {
+        height: 1.2px;
+        background-color: #cc2901;
+        color: #cc2901;
+        margin: 32px 80px;
+      }
+      /* Changes properties of footer itself */
+      footer {
+        background-color: #181818;
+      }
+
+      /* Changes properties of items inside footer */
+      .footer {
+        display: flex;
+        padding: 23px 122px;
+        justify-content: space-evenly;
+      }
+      .footer ul {
+        list-style: none;
+      }
+      .footer > div {
+        width: 200px;
+      }
+      footer .footer-rights {
+        text-align: center;
+        color: grey;
+        padding: 12px 0;
+      }
+
+      /* Responsive Webpage */
+      @media screen and (max-width: 720px) {
+        nav {
+        }
+        body {
+          min-width: fit-content;
+          /* auto adjusts body content in responsive-page to size of the device's screen */
+        }
+        .box {
+          flex-direction: column;
+        }
+        .firstSection {
+          flex-direction: column-reverse;
+        }
+        .secondSection .vertical {
+          height: unset;
+        }
+        /* selecting both vertical title and desc and adding left padding altogether */
+        .vertical-title,
+        .vertical-desc {
+          left: 40px;
+        }
+        .secondSection .box {
+          width: 90vw; /*50vw --> 90vw*/
+        }
+        nav {
+          flex-direction: column;
+        }
+        .leftSection {
+          width: 100% !important;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .rightSection {
+          width: 72px !important;
+          display: flex;
+          justify-content: center;
+        }
+        /* .rightSection img {
+          width: 45vw;
+          margin-bottom: 73px;
+        } */
+        .rightSection img {
+          border: 7px solid;
+          max-width: 100%;
+          height: auto;
+        }
+        nav ul li {
+          margin: 5px 10px;
+        }
+        nav ul li a {
+          font-size: medium;
+        }
+
+        .secondSection {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 1500px;
+        }
+        .image-top {
+          top: 100px;
+          /* adjusts vertical icons in work experience with the vertical titles and descs */
+        }
+        /* ChatGPT Suggests */
+        .footer {
+          flex-direction: column;
+          padding: 20px;
+          align-items: center;
+        }
+        .footer > div,
+        .footer ul {
+          width: auto;
+          margin-bottom: 15px;
+        }
+        .footer-fourth iframe {
+          width: 90vw;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <!--Comments-->
+  <!--flex is like wraps the space-->
+  <!--justify-content makes the section left and right-->
+  <!-- .firstSection > div selects direct child div of the section instead of further nested ones-->
+  <!-- .purple is used as an utility class-->
+  <body>
+    <header>
+      <nav>
+        <!--left and right div sections-->
+        <div class="left">Utkarsh's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="/about-me.html">About</a></li>
+            <li><a href="/">Projects</a></li>
+            <li><a href="https://utkarshblogs14.blogspot.com">Blogs</a></li>
+            <li><a href="/">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="firstSection">
+        <!--Span to group and style portions of text or other inline elements without creating a new line or affecting 
+        the overall layout of the page-->
+        <!-- Element to contain animated typing -->
+        <div class="leftSection">
+          <div>Hi, my name is <span class="purple">Utkarsh</span></div>
+          <div>and I am a passionate</div>
+          <span id="element"></span>
+          <div class="buttons">
+            <a href=""><button class="btn">Download Resume</button></a>
+            <a href="https://github.com/UraniumUtkarsh/" target="_blank"
+              ><button class="btn">Visit Github</button></a
+            >
+          </div>
+        </div>
+        
+        <div class="rightSection">
+          
+
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="secondSection">
+        <span class="text-grey">Let's Connect</span>
+        <h1>My Social Handles</h1>
+
+        <div class="box">
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              Linkedin
+            </div>
+            <div class="vertical-desc">
+              uranium-utkarsh-pandey
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              X
+            </div>
+            <div class="vertical-desc">
+              UraniumUtkarsh
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              Blogger
+            </div>
+            <div class="vertical-desc">
+              
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              Mail
+            </div>
+            <div class="vertical-desc">
+              
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              AICTE & IBM-SkillsBuild Cybersecurity Internship
+              <i>(Jan 2025 - Feb 2025)</i>
+            </div>
+            <div class="vertical-desc">
+              Gained experience in Cryptography, Network Security, Python,
+              Problem-Solving, and Steganography (LSB approach)
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Utkarsh's Portfolio</h3>
+        </div>
+        <div class="footer-second"></div>
+        <ul>
+          <li>Home</li>
+          <li>Blog</li>
+          <li>Projects</li>
+          <li>Live-Project</li>
+          <li>E-mail</li>
+          <li>Phone</li>
+        </ul>
+        <div class="footer-third">
+          <ul>
+            <li>X</li>
+            <li>Linkedin</li>
+            <li>Github</li>
+            <li></li>
+            <li>E-mail</li>
+            <li>Phone</li>
+          </ul>
+        </div>
+        <div class="footer-fourth">
+          <ul>
+            <li><b>Find Me at:</b> Shri Ramswaroop Memorial University</li>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.4816770959346!2d81.0955250741511!3d26.951641758418866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995ee81add328f%3A0xbe8acc99218572c9!2sShri%20Ramswaroop%20Memorial%20University%20(SRMU)!5e0!3m2!1sen!2sin!4v1751921502472!5m2!1sen!2sin"
+              width="300px"
+              height="160px"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-rights">
+        Copyright &copy; utkarshpandey.com | All rights reserved
+      </div>
+    </footer>
+  </body>
+</html>
