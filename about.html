@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;
+      0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css.css" type="text/css" />
+    <style>
+      .firstSection .leftSection .socials {
+        margin: 30px;
+        font-size: 1.5rem;
+      }
+      .firstSection .leftSection .socials ul li {
+        list-style: none;
+        padding-top: 2%;
+      }
+      .firstSection .leftSection .socials ul li a {
+        padding: 10%;
+        text-decoration: none;
+        color: white;
+      }
+      .rightSection {
+        font-size: 1.5rem;
+      }
+      .rightSection a {
+        text-decoration: none;
+        color: #fd5025;
+      }
+
+      #tech-stack {
+        text-align: center;
+        margin: 40px auto;
+      }
+
+      .tech-marquee {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+      }
+
+      .marquee-track {
+        display: inline-flex;
+        animation: marquee 20s linear infinite;
+      }
+
+      .marquee-track img {
+        height: 60px;
+        margin: 10px 70px;
+        flex-shrink: 0;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media screen and (max-width: 720px) {
+        .rightSection {
+          width: 72px !important;
+          display: flex;
+          justify-content: center;
+          margin: 30px;
+        }
+        .tech-stack .tech-stack {
+        }
+        .marquee-track img {
+          height: 40px; /* smaller icons for mobile */
+          margin: 2% 12px; /* slightly smaller gap */
+        }
+        .firstSection .leftSection .socials ul li a {
+          font-size: 0.9rem;/* smaller text */
+          padding: 2%; /* very small padding */
+          display: flex; /* align icon + text nicely */
+          align-items: center;
+        }
+
+        .firstSection .leftSection .socials ul li img {
+          height: 24px; /* smaller icon */
+          margin-right: 4px; /* small space after icon */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">About Me</div>
+        <div class="right">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><s>About</s></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="https://utkarshblogs14.blogspot.com">Blogs</a></li>
+            <li><a href="/#contact-me">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="firstSection">
+        <div class="leftSection">
+          <h5>Social Handles</h5>
+          <span class="purple">@UraniumUtkarsh</span>
+          <div class="socials">
+            <ul>
+              <li>
+                <a href="https://www.linked.com/in/uranium-utkarsh-pandey"
+                  ><img src="/icons/linkedin.png" alt="" height="50px" />
+                  @uranium-utkarsh-pandey</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/UraniumUtkarsh"
+                  ><img src="/icons/github.png" alt="" height="50px" />
+                  @UraniumUtkarsh</a
+                >
+              </li>
+              <li>
+                <a href="https://x.com/UraniumUtkarsh"
+                  ><img
+                    src="/icons/x-logo.png"
+                    alt=""
+                    height="50px"
+                  />@UraniumUtkarsh</a
+                >
+              </li>
+              <li>
+                <a href=""
+                  ><img src="/icons/instagram.png" height="50px" />
+                  @UraniumUtkarsh</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="rightSection">
+          <p>
+            I am Utkarsh, known online as
+            <span class="purple"><i>UraniumUtkarsh</i></span
+            >, a handle you might even spot featured around the web
+            <span class="searchit"
+              ><a href="https://www.google.com/search?q=uraniumutkarsh"
+                >(Google it!)</a
+              ></span
+            >. I chose <i>“Uranium”</i> because, I like it, I see potential for
+            massive impact: it can construct or destruct when directed with
+            discipline much like offensive and defensive roles in cybersecurity,
+            where the same energy can either strengthen systems or ethically
+            challenge them to reveal their flaws.
+          </p>
+        </div>
+      </section>
+      <hr />
+      <section id="tech-stack">
+        <h1>Tech Stack & Tools</h1>
+        <div class="tech-marquee">
+          <div class="marquee-track">
+            <img src="/icons/python.png" alt="Python" />
+            <img src="/icons/c.png" alt="C" />
+            <img src="/icons/cpp.png" alt="C++" />
+            <img src="/icons/django.png" alt="Django" />
+            <img src="/icons/kali.png" alt="Kali Linux" />
+            <img src="/icons/tryhackme.png" alt="TryHackMe" />
+            <img src="/icons/wireshark.png" alt="Wireshark" />
+            <img src="/icons/mysql.png" alt="MySQL" />
+            <!-- repeat some icons to make loop smooth -->
+            <img src="/icons/python.png" alt="Python" />
+            <img src="/icons/c.png" alt="C" />
+            <img src="/icons/cpp.png" alt="C++" />
+            <img src="/icons/django.png" alt="Django" />
+          </div>
+        </div>
+      </section>
+      <hr/>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Reach me out</h3>
+        </div>
+        <div class="footer-second">
+          <section id="connect-me">
+            <ul>
+              <li>
+                <a href="mailto:utkarshpandey_202210101180005@srmu.ac.in"
+                  ><img src="/icons/email.png" alt=""
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfkR_LA1mPrRkLkyTIJs1B5U7R3aSwh84b-d-tJClGm1JVSyg/viewform?usp=dialog"
+                  ><img src="/icons/forms.png" alt="Message for me"
+                /></a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="footer-rights">
+        Copyright &copy; utkarshpandey.com | All rights reserved
+      </div>
+    </footer>
+  </body>
+</html>
