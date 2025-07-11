@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title>Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,7 +13,65 @@
     />
     <link rel="stylesheet" href="/assets/css.css" type="text/css" />
     <style>
-      
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        margin: 100px 100px;
+      }
+
+      .projects .project-img {
+        width: 300px; /* fixed width for each card */
+        text-decoration: none; /* remove underline */
+        color: inherit; /* keep text color */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #181818; /* light background color */
+        border-radius: 8px; /* smooth corners */
+        padding: 10px; /* space inside the box */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+        transition: transform 0.2s, box-shadow 0.2s; /* smooth hover */
+      }
+
+      .projects .project-img:hover {
+        transform: translateY(-4px); /* lift on hover */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* stronger shadow on hover */
+      }
+      .project-img a {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 6px 12px;
+        background-color: #24292e; /* GitHub dark background */
+        color: #ffffff; /* white text */
+        text-decoration: none; /* remove underline */
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.2s, transform 0.2s;
+      }
+
+      .project-img a:hover {
+        background-color: #333c42; /* slightly lighter on hover */
+        transform: translateY(-2px); /* small lift effect */
+      }
+
+      .projects img {
+        width: 100%;
+        height: 150px;
+        border-radius: 4px; /* slightly smaller radius inside card */
+        object-fit: cover;
+      }
+      .project-desc {
+        color: white;
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        margin-top: 8px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -23,17 +81,141 @@
         <div class="right">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About-Me</a></li>
+            <li><a href="/about.html">About</a></li>
             <li><s>Projects</s></li>
             <li><a href="https://utkarshblogs14.blogspot.com">Blogs</a></li>
-            <li><a href="/#connect-me">Contact Me</a></li>
+            <li><a href="/#contact-me">Contact Me</a></li>
           </ul>
         </div>
       </nav>
     </header>
 
     <main>
-      
+      <div class="projects">
+        <div class="project-img">
+          <a href="http://python14developers.pythonanywhere.com" target="_blank"
+            ><img
+              src="/assets/projects/SteganographyProject.png"
+              alt="SteganographyProject"
+          /></a>
+          <h3 class="purple">Steganography Tool</h3>
+          <div class="project-desc">
+            A lightweight, browser-based steganography tool that lets users hide
+            and extract secret text within images using LSB encoding. Hosted at
+            python14developers.pythonanywhere.com, it ensures data remains
+            invisible to the human eye while keeping the cover image visually
+            unchanged. Designed for privacy enthusiasts, students, and anyone
+            exploring digital data hiding.
+          </div>
+          <a
+            href="https://github.com/UraniumUtkarsh/SteganographySecure-FileTransfer"
+            target="_blank"
+            >GitHub 🔗</a
+          >
+        </div>
+
+        <div class="project-img">
+          <a href="/assets/projects/Wireshark_pktsys.png" target="_blank"
+            ><img
+              src="/assets/projects/Wireshark_pktsys.png"
+              alt="Wireshark Packet Analysis"
+          /></a>
+          <h3 class="purple">Wireshark Packet Analysis</h3>
+          <div class="project-desc">
+            Explored network traffic capture and deep packet analysis using
+            Wireshark. Learned to filter protocols like TCP, UDP, ICMP; detect
+            anomalies; and interpret handshake, retransmission, and flow
+            patterns. Gained hands‑on insight into real‑world network behavior,
+            troubleshooting, and security implications by dissecting live
+            packets and understanding data flows at the protocol level.
+          </div>
+          <a
+            href="https://github.com/UraniumUtkarsh/pcap_analysis/"
+            target="_blank"
+            >GitHub 🔗</a
+          >
+        </div>
+
+        <div class="project-img">
+          <a href="/assets/projects/PassGen.png" target="_blank"
+            ><img
+              src="/assets/projects/PassGen.png"
+              alt="Password Generator Tool"
+          /></a>
+          <h3 class="purple">CLI Password Management</h3>
+          <div class="project-desc">
+            Built a command‑line tool to securely generate strong, random
+            passwords and manage them locally. Supports customizable password
+            length, character sets, and quick retrieval by keyword. Focused on
+            usability and security by avoiding plaintext storage, highlighting
+            safe password practices, and learning about hashing, entropy, and
+            secure local password management workflows.
+          </div>
+          <a href="/404.html" target="_blank">GitHub 🔗</a>
+        </div>
+
+        <div class="project-img">
+          <a href="https://niyuktisure.com" target="_blank"
+            ><img
+              src="/assets/projects/NiyuktiSure.png"
+              alt="HR Management App"
+          /></a>
+          <h3 class="purple">WebApp (On-going)</h3>
+          <div class="project-desc">
+            NiyuktiSure is an HR-focused web platform designed to streamline
+            hiring and onboarding. Features include job postings, ATS-powered
+            resume scoring using Gemini AI, application tracking, and dashboards
+            for HR, companies, and job seekers. Built with Django, it supports
+            OAuth2 login and aims to simplify recruitment workflows for both
+            employers and candidates.
+          </div>
+          <a
+            href="https://github.com/UraniumUtkarsh/Niyukti-Sure/"
+            target="_blank"
+            >GitHub 🔗</a
+          >
+        </div>
+
+        <div class="project-img">
+          <a href="https://utkarshpandey.com/Terminal-Folio" target="_blank"
+            ><img src="/assets/projects/TerminalFolio.png" alt="My-portfolio"
+          /></a>
+          <h3 class="purple">Terminal-Portfolio</h3>
+          <div class="project-desc">
+            A personal portfolio styled to echo the feel of a Linux terminal,
+            showcasing projects in cybersecurity, web tools, and open‑source
+            development. Includes the command‑line themed “Terminal‑Folio,”
+            steganography tool, Wireshark analysis, and more. Designed
+            responsively, it blends technical depth and creativity to share
+            tools, learnings, and experiments.
+          </div>
+          <a
+            href="https://github.com/UraniumUtkarsh/UraniumUtkarsh.github.io/"
+            target="_blank"
+            >GitHub 🔗</a
+          >
+        </div>
+
+        <div class="project-img">
+          <a href="https://utkarshpandey.com" target="_blank"
+            ><img src="/assets/projects/My-portfolio.png" alt="My-portfolio"
+          /></a>
+          <h3 class="purple">My This Portfolio</h3>
+          <div class="project-desc">
+            A minimalist, responsive portfolio highlighting certificates,
+            projects, and blogs. Built with HTML, CSS, and custom styling, it
+            features sections like About Me, Projects, and contact links. The
+            design blends professional and personal touchpoints, using clean
+            navigation, card-style project showcases, and a dark-themed
+            aesthetic to present skills and achievements.
+          </div>
+          <a
+            href="https://github.com/UraniumUtkarsh/utkarshpandey.com/"
+            target="_blank"
+            >GitHub 🔗</a
+          >
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -44,12 +226,15 @@
         <div class="footer-second">
           <section id="connect-me">
             <ul>
-                <li><a href=""><img src="/icons/email.png" alt=""></a></li>
+              <li>
+                <a href="mailto:utkarshpandey_202210101180005@srmu.ac.in"><img src="/icons/email.png" alt="Email" /></a>
+              </li>
               <li>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSfkR_LA1mPrRkLkyTIJs1B5U7R3aSwh84b-d-tJClGm1JVSyg/viewform?usp=dialog"
-                  ><img src="/icons/forms.png" alt="Message for me"
-                /></a>
+                >
+                  <img src="/icons/forms.png" alt="Message for me" />
+                </a>
               </li>
             </ul>
           </section>
