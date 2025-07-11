@@ -1,0 +1,273 @@
+* {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+      nav {
+        /* New Changes */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        /* 11-07-2025 2:50 AM */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 72px;
+        background-color: #cc2901;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        list-style: none;
+        margin: 0 30px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: large;
+      }
+      nav ul li a:hover {
+        color: #ff9a3b;
+        font-size: 1.1rem;
+      }
+      s{
+        color:#ff9a3b;
+        cursor: pointer;
+      }
+      .left {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+      }
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        margin: 110px 0;
+        align-items: center;
+      }
+      .firstSection > div {
+        width: 30%;
+      }
+      .leftSection {
+        width: 50%;
+        font-size: 2.5rem;
+      }
+
+      .leftSection .buttons {
+        padding: 50px 0;
+      }
+      /*.leftSection button {
+        position: relative;
+        top: 30px;
+        This did the job as well
+      }*/
+
+      .leftSection .btn {
+        background-color: #cc2901;
+        color: white;
+        padding: 12px 12px;
+        border: 2px solid;
+        border-radius: 25px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .leftSection .btn a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .rightSection img {
+        width: 22vw;
+        border-radius: 50%;
+        border: 15px solid;
+        border-color: white;
+      }
+      .secondSection {
+        max-width: 80vw;
+        margin: auto;
+        height: 80vh;
+      }
+      .secondSection h1 {
+        font-size: 1.8rem;
+      }
+      /*
+            ---CSS Comment---
+
+            .secondSection .box
+            refers to box class inside second section
+            */
+      .secondSection .box {
+        height: 2px;
+        width: 60vw;
+        background-color: white;
+        margin: 40px 225px;
+        display: flex; /*using flex so that all ther verticals don't overlap upon each other*/
+      }
+      .secondSection .vertical {
+        height: 90px;
+        width: 1px;
+        background-color: white;
+        margin: 0px 6vw; /*tweak this padding to adjust for the work experiences in vertical class*/
+        /* changing margin, can change position of verticals like L- Center -R */
+      }
+
+      /*Utility CSS Classes*/
+      .purple {
+        color: #fd5025;
+      }
+      .text-grey {
+        color: rgba(128, 128, 128, 0.726);
+      }
+      .image-top {
+        width: 23px;
+        position: relative; /*changes the position of the HTML element relative to where it normally appears*/
+        top: -28px;
+        left: -11px;
+      }
+      .vertical-title {
+        position: relative;
+        top: 70px;
+        width: 155px;
+      }
+      .vertical-desc {
+        position: relative;
+        top: 80px;
+        color: grey;
+        width: 150px;
+        font-size: 15px;
+      }
+
+      #element {
+        color: #fd5025;
+      }
+
+      main hr {
+        height: 1.2px;
+        background-color: #cc2901;
+        color: #cc2901;
+        margin: 32px 80px;
+      }
+      /* Changes properties of footer itself */
+      footer {
+        background-color: #181818;
+        /* new changes */
+        /* position: fixed;
+        bottom: 0;
+        width: 100%; */
+      }
+
+      /* Changes properties of items inside footer */
+      .footer {
+        
+        display: flex;
+        padding: 23px 122px;
+        justify-content: space-evenly;
+      }
+      footer .footer-second ul {
+        display: flex;
+        justify-content: center;
+        margin: 0px 30px;
+      }
+      footer .footer-second ul li {
+        list-style: none;
+        margin: 0px 30px;
+        padding: 0 10px;
+      }
+      .footer ul {
+        list-style: none;
+      }
+      .footer > div {
+        width: 200px;
+      }
+      footer .footer-rights {
+        text-align: center;
+        color: grey;
+        padding: 12px 0;
+      }
+
+      /* Responsive Webpage */
+      @media screen and (max-width: 720px) {
+        body {
+          min-width: fit-content;
+          /* auto adjusts body content in responsive-page to size of the device's screen */
+        }
+        .box {
+          flex-direction: column;
+        }
+        .firstSection {
+          flex-direction: column-reverse;
+        }
+        .secondSection .vertical {
+          height: unset;
+        }
+        /* selecting both vertical title and desc and adding left padding altogether */
+        .vertical-title,
+        .vertical-desc {
+          left: 40px;
+        }
+        .secondSection .box {
+          width: 90vw; /*50vw --> 90vw*/
+        }
+        nav {
+          flex-direction: column;
+        }
+        .leftSection {
+          width: 100% !important;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .rightSection {
+          width: 72px !important;
+          display: flex;
+          justify-content: center;
+        }
+        /* .rightSection img {
+          width: 45vw;
+          margin-bottom: 73px;
+        } */
+        .rightSection img {
+          border: 7px solid;
+          max-width: 100%;
+          height: auto;
+        }
+        nav ul li {
+          margin: 5px 10px;
+        }
+        nav ul li a {
+          font-size: medium;
+        }
+
+        .secondSection {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 1500px;
+        }
+        .image-top {
+          top: 100px;
+          /* adjusts vertical icons in work experience with the vertical titles and descs */
+        }
+        /* ChatGPT Suggests */
+        .footer {
+          flex-direction: column;
+          padding: 20px;
+          align-items: center;
+        }
+        .footer > div,
+        .footer ul {
+          width: auto;
+          margin-bottom: 15px;
+        }
+
+        .footer-fourth iframe {
+          width: 90vw;
+          height: auto;
+        }
+      }
