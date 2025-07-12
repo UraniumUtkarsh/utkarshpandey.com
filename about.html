@@ -47,13 +47,145 @@
 
       .marquee-track {
         display: inline-flex;
-        animation: marquee 20s linear infinite;
+        animation: marquee 40s linear infinite;
       }
-
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
       .marquee-track img {
+        pointer-events: auto;
         height: 60px;
         margin: 10px 70px;
         flex-shrink: 0;
+      }
+      #eca-section {
+        text-align: center;
+        margin: 40px auto;
+      }
+
+      .eca-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin: 20px 0;
+      }
+
+      .eca-buttons button {
+        background: #181818;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 16px;
+      }
+
+      .eca-buttons button:hover {
+        background: #fd5025;
+      }
+
+      .eca-content {
+        margin-top: 20px;
+      }
+
+      .eca-item {
+        display: none;
+        animation: fadeIn 0.4s;
+      }
+
+      .eca-item img {
+        height: 120px;
+        margin: 8px;
+        border-radius: 6px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      #internships {
+        margin: 40px auto;
+        max-width: 1000px;
+      }
+
+      #internships h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .internship-card {
+        display: flex;
+        flex-direction: row;
+        background-color: #f2f2f2; /* light grey */
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        overflow: hidden;
+      }
+
+      .internship-card img {
+        width: 200px;
+        height: auto;
+        object-fit: cover;
+        border-right: 1px solid #ddd;
+      }
+
+      .internship-info {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .internship-info h3 {
+        margin: 0 0 8px 0;
+        color: #333;
+      }
+
+      .internship-info p {
+        margin: 0;
+        color: #555;
+        font-size: 0.95rem;
+      }
+      .achievement-card {
+        display: flex;
+        flex-direction: row;
+        background-color: #f4f4f4; /* light grey, change as you like */
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        overflow: hidden;
+      }
+
+      .achievement-card img {
+        width: 180px;
+        height: auto;
+        object-fit: cover;
+        border-right: 1px solid #ddd;
+      }
+
+      .achievement-info {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .achievement-info h3 {
+        margin: 0 0 8px 0;
+        color: #333;
+      }
+
+      .achievement-info p {
+        margin: 0;
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
       @keyframes marquee {
@@ -72,14 +204,12 @@
           justify-content: center;
           margin: 30px;
         }
-        .tech-stack .tech-stack {
-        }
         .marquee-track img {
           height: 40px; /* smaller icons for mobile */
           margin: 2% 12px; /* slightly smaller gap */
         }
         .firstSection .leftSection .socials ul li a {
-          font-size: 0.9rem;/* smaller text */
+          font-size: 0.9rem; /* smaller text */
           padding: 2%; /* very small padding */
           display: flex; /* align icon + text nicely */
           align-items: center;
@@ -88,6 +218,33 @@
         .firstSection .leftSection .socials ul li img {
           height: 24px; /* smaller icon */
           margin-right: 4px; /* small space after icon */
+        }
+        .internship-card {
+          flex-direction: column;
+          align-items: center;
+        }
+        .internship-card img {
+          width: 100%;
+          height: auto;
+          border-right: none;
+          border-bottom: 1px solid #ddd;
+        }
+        .internship-info {
+          text-align: center;
+        }
+        @media screen and (max-width: 720px) {
+          .achievement-card {
+            flex-direction: column;
+            align-items: center;
+          }
+          .achievement-card img {
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid #ddd;
+          }
+          .achievement-info {
+            text-align: center;
+          }
         }
       }
     </style>
@@ -102,7 +259,7 @@
             <li><s>About</s></li>
             <li><a href="/projects.html">Projects</a></li>
             <li><a href="https://utkarshblogs14.blogspot.com">Blogs</a></li>
-            <li><a href="/#contact-me">Contact Me</a></li>
+            <li><a href="/contact-me.html">Contact Me</a></li>
           </ul>
         </div>
       </nav>
@@ -167,23 +324,283 @@
         <h1>Tech Stack & Tools</h1>
         <div class="tech-marquee">
           <div class="marquee-track">
-            <img src="/icons/python.png" alt="Python" />
-            <img src="/icons/c.png" alt="C" />
-            <img src="/icons/cpp.png" alt="C++" />
-            <img src="/icons/django.png" alt="Django" />
-            <img src="/icons/kali.png" alt="Kali Linux" />
-            <img src="/icons/tryhackme.png" alt="TryHackMe" />
-            <img src="/icons/wireshark.png" alt="Wireshark" />
-            <img src="/icons/mysql.png" alt="MySQL" />
+            <img src="/icons/python.png" alt="Python" title="Python" />
+            <img src="/icons/c.png" alt="C" title="C" />
+            <img src="/icons/cpp.png" alt="C++" title="C++" />
+            <img src="/icons/django.png" alt="Django" title="Django" />
+            <img src="/icons/kali.png" alt="Kali Linux" title="Kali OS" />
+            <img src="/icons/tryhackme.png" alt="TryHackMe" title="TryHackMe" />
+            <img src="/icons/wireshark.png" alt="Wireshark" title="Wireshark" />
+            <img src="/icons/mysql.png" alt="MySQL" title="MySQL" />
             <!-- repeat some icons to make loop smooth -->
-            <img src="/icons/python.png" alt="Python" />
-            <img src="/icons/c.png" alt="C" />
-            <img src="/icons/cpp.png" alt="C++" />
-            <img src="/icons/django.png" alt="Django" />
+            <img src="/icons/python.png" alt="Python" title="Python" />
+            <img src="/icons/c.png" alt="C" title="C" />
+            <img src="/icons/cpp.png" alt="C++" title="C++" />
+            <img src="/icons/django.png" alt="Django" title="Django" />
+            <img src="/icons/kali.png" alt="Kali Linux" title="Kali OS" />
+            <img src="/icons/tryhackme.png" alt="TryHackMe" title="TryHackMe" />
+            <img src="/icons/wireshark.png" alt="Wireshark" title="Wireshark" />
+            <img src="/icons/mysql.png" alt="MySQL" title="MySQL" />
           </div>
         </div>
       </section>
-      <hr/>
+      <hr />
+      <section id="eca-section">
+        <h2>Education, Certificates & Achievements</h2>
+        <div class="eca-buttons">
+          <button onclick="toggleSection('education')">Education</button>
+          <button onclick="toggleSection('certificates')">Certificates</button>
+          <button onclick="toggleSection('achievements')">Achievements</button>
+        </div>
+
+        <div class="eca-content">
+          <div id="education" class="eca-item">
+            <h3 class="purple">Educational Institute / University</h3>
+            <p>
+              BTech CSE (Cyber Security) at Shri Ramswaroop Memeorial University
+              (2022–2026)
+            </p>
+            <p>
+              Intermediate: PCM-Computer Science - Lucknow Public School,
+              Lucknow (2019–2021)
+            </p>
+            <p>High School: Seth AR Jaipuria School, Ghaziabad (2017-2019)</p>
+          </div>
+
+          <div id="certificates" class="eca-item">
+            <h3 class="purple">Certificates</h3>
+            <a
+              href="/assets/certificates/achievements/Design Thinking - Practitioner's Perspective Grade A.jpeg"
+              target="_blank"
+            >
+              <img
+                src="assets/certificates/achievements/Design Thinking - Practitioner's Perspective Grade A.jpeg"
+                alt="TCSion Design Thinking | Grade A"
+                title="TCSion Design Thinking with A Grade"
+            /></a>
+            <a
+              href="/assets/certificates/achievements/Practical Cyber Security for Cyber Security Practitioners_page-0001.jpg"
+              target="_blank"
+              ><img
+                src="assets/certificates/achievements/Practical Cyber Security for Cyber Security Practitioners_page-0001.jpg"
+                alt="NPTEL Certificate"
+                title="MITRE ATT&CK Certification"
+            /></a>
+            <a
+              href="/assets/certificates/achievements/Code-in by Google.jpeg"
+              target="_blank"
+            >
+              <img
+                src="assets/certificates/achievements/Code-in by Google.jpeg"
+                alt="Google Code-in"
+                title="Google Code-in"
+            /></a>
+            <a
+              href="/assets/certificates/achievements/Introduction to Python.jpeg"
+              target="_blank"
+            >
+              <img
+                src="assets/certificates/achievements/Introduction to Python.jpeg"
+                alt="Udemy - Python"
+                title="Introduction to Python"
+            /></a>
+            <a
+              href="/assets/certificates/achievements/IBM_Cybersecurity_Fundamentals.png"
+              target="_blank"
+            >
+              <img
+                src="assets/certificates/achievements/IBM_Cybersecurity_Fundamentals.png"
+                alt="IBM_Cybersecurity_Fundamentals"
+                title="IBM_Cybersecurity_Fundamentals"
+            /></a>
+            <a
+              href="/assets/certificates/achievements/Introduction-to-Cybersecurity_IBM.jpg"
+              target="_blank"
+            >
+              <img
+                src="assets/certificates/achievements/Introduction-to-Cybersecurity_IBM.jpg"
+                alt="Google Code-in"
+                title="Google Code-in"
+            /></a>
+            <a
+              href="assets/certificates/achievements/SIH_2024.jpg"
+              target="_blank"
+            >
+              <img
+                src="/assets/certificates/achievements/SIH_2024.jpg"
+                alt="SIH_2024"
+                title="SIH_2024"
+            /></a>
+            <a
+              href="/assets/certificates/achievements/IBM_MDLPT406.jpg"
+              target="_blank"
+            >
+              <img
+                src="/assets/certificates/achievements/IBM_MDLPT406.jpg"
+                alt="Offensive CySec"
+                title="IBM_MDLPT406"
+            /></a>
+            <a
+              href="assets/certificates/achievements/IBM_MDLPT408.jpg"
+              target="_blank"
+            >
+              <img
+                src="/assets/certificates/achievements/IBM_MDLPT408.jpg"
+                alt="IBM_MDLPT408"
+                title="IBM_MDLPT408.jpg"
+            /></a>
+            <a
+              href="assets/certificates/AILiteracy_workshop_certificate.jpg"
+              target="_blank"
+            >
+              <img
+                src="/assets/certificates/AILiteracy_workshop_certificate.jpg"
+                alt="AI Tools"
+                title="AI Literacy Workshop"
+            /></a>
+            <a
+              href="assets/certificates/achievements/Reliance CyberSec Analyst.png"
+              target="_blank"
+            >
+              <img
+                src="assets/certificates/achievements/Reliance CyberSec Analyst.png"
+                alt="CyberSec Analyst"
+                title="CyberSec Analyst"
+            /></a>
+          </div>
+
+          <div class="eca-item" id="achievements">
+            <div class="achievement-card">
+              <a
+                href="https://www.linkedin.com/posts/uranium-utkarsh-pandey_viveka-bughunting-cybersecurity-activity-7321603633421119489-KjZN?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACRJOrABD6ViZyVgQfsKCaLjsonIBXIn-vQ"
+                target="_blank"
+              >
+                <img
+                  src="/assets/certificates/achievements/BugHunting.jpeg"
+                  alt="Achievement Certificate"
+              /></a>
+              <div class="achievement-info">
+                <h3>
+                  1<sup>st</sup> rank in Bug-Hunting Competition in Viveka
+                  Techfest at SRMU
+                </h3>
+                <p>
+                  Ranked 1<sup>st</sup> out of 50+ participants in Bug hunting
+                  competition under Viveka The Intelligence 2025 and received
+                  reward of ₹700.
+                </p>
+              </div>
+            </div>
+
+            <div class="achievement-card">
+              <a
+                href="https://www.linkedin.com/posts/uranium-utkarsh-pandey_cybersecurity-cyberhygiene-writingcompetition-activity-7299637671268597760-tIxZ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACRJOrABD6ViZyVgQfsKCaLjsonIBXIn-vQ"
+                target="_blank"
+              >
+                <img
+                  src="/assets/certificates/achievements/CyberHygiene.jpg"
+                  alt="Another Achievement"
+              /></a>
+              <div class="achievement-info">
+                <h3>
+                  Ranked 2<sup>nd</sup> in Article Writing Competition on Cyber
+                  Hygiene Practices
+                </h3>
+                <p>
+                  Ranked 2<sup>nd</sup> out of 140+ participants in an article
+                  writing competition, hosted by Dept. of CSE & Dept. of CSIS at
+                  Shri Ramswaroop Memorial University. Received the reward of
+                  ₹1000.
+                </p>
+              </div>
+            </div>
+
+            <!-- add more cards similarly -->
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section id="internships">
+        <h2>Internships</h2>
+        <div class="internship-card">
+          <a href="/assets/certificates/work/TechnoHacks.png" target="_blank"
+            ><img
+              src="/assets/certificates/work/TechnoHacks.png"
+              alt="Internship Certificate"
+          /></a>
+          <div class="internship-info">
+            <h3>
+              Ethical Hacking Intern at TechnoHacks Solutions, (Jun 2024 – Jul
+              2024)
+            </h3>
+            <p>
+              Hands on Kali Linux for OSINT, penetration testing, and
+              vulnerability assessment
+            </p>
+          </div>
+        </div>
+
+        <div class="internship-card">
+          <a
+            href="/assets/certificates/work/AICTE_IBM_SkillsBuild_Internship.png"
+            target="_blank"
+          >
+            <img
+              src="/assets/certificates/work/AICTE_IBM_SkillsBuild_Internship.png"
+              alt="Internship Certificate"
+          /></a>
+          <div class="internship-info">
+            <h3>
+              Cybersecurity Intern at AICTE & IBM SkillsBuild, (Jan 2025 – Feb
+              2025)
+            </h3>
+            <p>
+              Explored Steganography & LSB, Network Security, Python scripting
+            </p>
+          </div>
+        </div>
+
+        <div class="internship-card">
+          <a
+            href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/gmf3ypEXBj2wvfQWC_ifobHAoMjQs9s6bKS_GsJSPvo552xfPs3gA_1751386811704_completion_certificate.pdf"
+            target="_blank"
+          >
+            <img
+              src="/assets/certificates/work/Tata Cyber Analyst.png"
+              alt="Internship Certificate"
+          /></a>
+          <div class="internship-info">
+            <h3>
+              TATA Cybersecurity Analyst Job Simulation, (Jun 2025 – Jul 2025)
+            </h3>
+            <p>
+              Threat analysis, vulnerability scanning, incident reporting
+              through theforage.com
+            </p>
+          </div>
+        </div>
+
+        <div class="internship-card">
+          <a
+            href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/AKkAyEwWc8wjPxx9n/Hf4QMESoFeQwXPsiH_AKkAyEwWc8wjPxx9n_GsJSPvo552xfPs3gA_1751664087885_completion_certificate.pdf"
+            target="_blank"
+          >
+            <img
+              src="/assets/certificates/work/ANZ Cyber Security Management Job Simulation.jpg"
+              alt="Internship Certificate"
+          /></a>
+          <div class="internship-info">
+            <h3>
+              ANZ Australia Cybersecurity Management Job Simulation, (Jun 2025 –
+              Jul 2025)
+            </h3>
+            <p>
+              Risk assessment, security controls, stakeholder communication
+              through theforage.com
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -200,8 +617,7 @@
                 /></a>
               </li>
               <li>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfkR_LA1mPrRkLkyTIJs1B5U7R3aSwh84b-d-tJClGm1JVSyg/viewform?usp=dialog"
+                <a href="/contact-me.html"
                   ><img src="/icons/forms.png" alt="Message for me"
                 /></a>
               </li>
@@ -213,5 +629,20 @@
         Copyright &copy; utkarshpandey.com | All rights reserved
       </div>
     </footer>
+    <script>
+      function toggleSection(id) {
+        var items = document.querySelectorAll(".eca-item");
+        items.forEach((item) => {
+          if (item.id === id) {
+            // toggle clicked section
+            item.style.display =
+              item.style.display === "block" ? "none" : "block";
+          } else {
+            // hide others
+            item.style.display = "none";
+          }
+        });
+      }
+    </script>
   </body>
 </html>
