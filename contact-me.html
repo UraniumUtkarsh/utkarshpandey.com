@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact-Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;
+      0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css.css" type="text/css" />
+    <style>
+      .contact-section {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #1e1e1e;
+        padding: 50px 30px;
+        border-radius: 8px;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #fd5025;
+      }
+
+      #contact-form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #contact-form label {
+        margin: 8px 0 4px;
+        font-weight: 500;
+      }
+
+      #contact-form input,
+      #contact-form textarea {
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background: #2a2a2a;
+        color: white;
+        resize: vertical;
+      }
+
+      #contact-form input:focus,
+      #contact-form textarea:focus {
+        outline: 2px solid #fd5025;
+      }
+
+      #contact-form button {
+        margin-top: 16px;
+        padding: 12px;
+        background: #fd5025;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      #contact-form button:hover {
+        background: #e2471f;
+      }
+
+      @media screen and (max-width: 600px) {
+        .contact-section {
+          margin: 30px 20px;
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Contact-Me</div>
+        <div class="right">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="https://utkarshblogs14.blogspot.com">Blogs</a></li>
+            <li><s>Contact Me</s></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-section">
+        <h2>Send your message / feedback / queries</h2>
+        <form id="contact-form">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            required
+          />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+          />
+
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+            required
+          />
+
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Your message..."
+            required
+          ></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <!-- <div class="footer-first">
+          <h3>Reach me out</h3>
+        </div> -->
+        <div class="footer-second">
+          <section id="connect-me">
+            <ul>
+              <li>
+                <a href="mailto:utkarshpandey_202210101180005@srmu.ac.in"
+                  ><img src="/icons/email.png" alt=""
+                /></a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="footer-rights">
+        Copyright &copy; utkarshpandey.com | All rights reserved
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const params = new URLSearchParams(formData);
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbyNN6tLWpAv7fiyx3AkzzIsk9hvpylccR0AoSrf1dCfqgN3ZdQb7sX-0t59Lhjwxio0RQ/exec",
+            {
+              method: "POST",
+              body: params,
+            }
+          )
+            .then((response) => response.text())
+            .then((data) => {
+              alert("Thank you! Your message was sent.");
+              document.getElementById("contact-form").reset();
+            })
+            .catch((error) => {
+              alert("Error! Please try again later.");
+              console.error(error);
+            });
+        });
+    </script>
+  </body>
+</html>
