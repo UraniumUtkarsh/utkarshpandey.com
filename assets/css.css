@@ -192,10 +192,11 @@
 
       /* Responsive Webpage */
       @media screen and (max-width: 720px) {
-        body {
-          min-width: fit-content;
-          /* auto adjusts body content in responsive-page to size of the device's screen */
-        }
+         body {
+        min-width: auto;   /*<== when commented I guess pages acts better
+        auto adjusts body content in responsive-page to size of the device's screen*/
+        } 
+        
         .box {
           flex-direction: column;
         }
