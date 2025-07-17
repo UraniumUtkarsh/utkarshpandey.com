@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Utkarsh's Portfolio</title>
+    <title>Utkarsh's Home</title>
     <meta
       name="description"
       content="About Utkarsh Pandey aka UraniumUtkarsh — cybersecurity enthusiast, web developer, and creator of open‑source tools like steganography tool, Terminal‑Folio and more."
@@ -24,6 +24,19 @@
   <!-- .firstSection > div selects direct child div of the section instead of further nested ones-->
   <!-- .purple is used as an utility class-->
   <body>
+    <script>
+      // Show popup after delay
+      window.onload = function () {
+        setTimeout(function () {
+          document.getElementById("terminalFolioPopup").style.display = "flex";
+        }, 2000); // 2 seconds delay
+      };
+
+      function closePopup() {
+        document.getElementById("terminalFolioPopup").style.display = "none";
+      }
+    </script>
+
     <header>
       <nav>
         <!--left and right div sections-->
@@ -34,7 +47,7 @@
             <li><a href="/about.html">About</a></li>
             <li><a href="/projects.html">Projects</a></li>
             <li><a href="https://utkarshblogs14.blogspot.com">Blogs</a></li>
-            <li><a href="#contact-me">Contact Me</a></li>
+            <li><a href="/contact-me.html">Contact Me</a></li>
           </ul>
         </div>
       </nav>
@@ -49,6 +62,7 @@
           <div>Hello, I am <span class="purple">Utkarsh</span></div>
           <div>and I am a passionate</div>
           <span id="element"></span>
+
           <div class="buttons">
             <a href="/assets/CV_UTKARSH_PANDEY_BTech_CSE_CyberSecurity.docx"
               ><button class="btn">Download Resume</button></a
@@ -56,11 +70,8 @@
             <a href="https://github.com/UraniumUtkarsh/" target="_blank"
               ><button class="btn">Visit Github</button></a
             >
-            <a
-              href="/terminal-folio.html" target="_blank"
-              ><button class="btn">
-                Terminal-Folio   
-              </button></a
+            <a href="https://utkarshpandey.com" target="_blank"
+              ><button class="btn">Terminal-Folio</button></a
             >
           </div>
         </div>
@@ -154,7 +165,7 @@
                 /></a>
               </li>
               <li>
-                <a href="mailto:utkarshpandey_202210101180005+index+utkarshpandeydotcom@srmu.ac.in"
+                <a href="mailto:utkarshpandey_202210101180005@srmu.ac.in"
                   ><img src="/icons/email.png" alt="Email"
                 /></a>
               </li>
@@ -164,8 +175,7 @@
                 /></a>
               </li>
               <li>
-                <a
-                  href="/contact-me.html"
+                <a href="/contact-me.html"
                   ><img src="/icons/forms.png" alt="Message for me"
                 /></a>
               </li>
@@ -174,7 +184,8 @@
         </div>
       </div>
       <div class="footer-rights">
-        Copyright &copy; utkarshpandey.com | All rights reserved | Made with 💓 in India
+        Copyright &copy; utkarshpandey.com | All rights reserved | Made with 💓
+        in India
       </div>
     </footer>
 
@@ -198,5 +209,17 @@
         typeSpeed: 50,
       });
     </script>
+
+    <!-- Terminal-Folio Popup -->
+    <div id="terminalFolioPopup" class="popup-overlay">
+      <div class="popup-content">
+        <h2>🚀 Try out Terminal-Folio</h2>
+        <p>Experience a terminal-style portfolio like no other!</p>
+        <a href="/terminal-folio.html" target="_blank" class="popup-btn"
+          >Launch Now</a
+        >
+        <button onclick="closePopup()" class="popup-close">✖</button>
+      </div>
+    </div>
   </body>
 </html>
