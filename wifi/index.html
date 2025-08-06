@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WiFi Sharing Access Plans</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 2rem;
+        background: #f5f7fa;
+        color: #333;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .plans {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card h2 {
+        margin-top: 0;
+        font-size: 1.4rem;
+      }
+      .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+        color: #007bff;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+      .membership {
+        background: linear-gradient(135deg, #ffd700, #ffa500);
+        color: #000;
+      }
+      .membership h2 {
+        color: #000;
+      }
+      .btn {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .btn:hover {
+        background: #0056b3;
+      }
+
+      /* Modal Styling */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+      }
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+      }
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.2rem;
+      }
+      .qr-code {
+        margin-top: 1rem;
+        display: none;
+      }
+      .qr-code img {
+        width: 80%;
+      }
+      #ssidModal {
+        display: none;
+        position: fixed;
+        z-index: 11;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+      }
+      #ssidContent {
+        background: white;
+        padding: 2rem;
+        max-width: 400px;
+        margin: 15% auto;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+      }
+      #ssidContent .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WiFi Sharing Access Plans (Villa-481)</h1>
+    <p>
+      <center>
+        <strong>⚠️ Note:</strong> This WiFi access portal is intended for users
+        within a limited geographic area, specifically near the
+        <strong>Park and surrounding Villas</strong>.
+      </center>
+    </p>
+    <div class="plans">
+      <div class="card">
+        <h2>Basic Plan</h2>
+        <p class="price">Free</p>
+        <ul>
+          <li>30 Mbps speed</li>
+          <li>Access: 5 PM – 11:30 PM</li>
+          <li>Unlimited usage during hours</li>
+        </ul>
+        <button class="btn" onclick="openForm('Basic Plan')">Select</button>
+      </div>
+
+      <div class="card">
+        <h2>Flexi Plan</h2>
+        <p class="price">₹51 / Day</p>
+        <ul>
+          <li>30 Mbps speed</li>
+          <li>Valid for 24 hours</li>
+          <li>Up to 20 GB data</li>
+        </ul>
+        <button class="btn" onclick="openForm('Flexi Plan')">Select</button>
+      </div>
+
+      <div class="card">
+        <h2>Premium Plan</h2>
+        <p class="price">₹301 / Month</p>
+        <ul>
+          <li>30 Mbps speed</li>
+          <li>30 days validity</li>
+          <li>Up to 320 GB data</li>
+        </ul>
+        <button class="btn" onclick="openForm('Premium Plan')">Select</button>
+      </div>
+
+      <div class="card membership">
+        <h2>Membership Plan</h2>
+        <p class="price">₹551 / Month</p>
+        <ul>
+          <li>30–50 Mbps speed</li>
+          <li>30 days validity</li>
+          <li>Up to 450 GB data</li>
+          <li>Priority Access</li>
+        </ul>
+        <button
+          class="btn"
+          style="background: #000; color: #fff"
+          onclick="openForm('Membership Plan')"
+        >
+          Join Now
+        </button>
+      </div>
+    </div>
+
+    <div id="formModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeForm()">&times;</span>
+        <h2>Enter Your Details</h2>
+        <form id="planForm" onsubmit="return submitForm(event)">
+          <label>Full Name *</label>
+          <input type="text" required />
+
+          <label>Email Address *</label>
+          <input type="email" required />
+
+          <label>Phone *</label>
+          <input type="tel" required />
+
+          <label>Plan Selected</label>
+          <input type="text" id="selectedPlan" readonly />
+
+          <label>Device MAC (Optional)</label>
+          <input type="text" />
+
+          <div id="qrBasic" class="qr-code">
+            <button
+              onclick="window.location.href='upi://pay?pa=business.samplesoftwares14-1@okaxis&cu=INR'"
+            >
+              Donate for society
+            </button>
+          </div>
+          <div id="qrFlexi" class="qr-code">
+            <button
+              onclick="window.location.href='upi://pay?pa=business.samplesoftwares14-1@okaxis&am=51&cu=INR'"
+            >
+              Pay with UPI
+            </button>
+            or Scan this QR
+            <img src="/wifi/images/flexi.jpg" alt="Flexi Plan QR" />
+          </div>
+          <div id="qrPremium" class="qr-code">
+            <button
+              onclick="window.location.href='upi://pay?pa=business.samplesoftwares14-1@okaxis&am=301&cu=INR'"
+            >
+              Pay with UPI
+            </button>
+            or Scan this QR
+            <img src="/wifi/images/premium.jpg" alt="Premium Plan QR" />
+          </div>
+          <div id="qrMembership" class="qr-code">
+            <button
+              onclick="window.location.href='upi://pay?pa=business.samplesoftwares14-1@okaxis&am=551&cu=INR'"
+            >
+              Pay with UPI
+            </button>
+            or Scan this QR
+            <img src="/wifi/images/membership.jpg" alt="Membership Plan QR" />
+          </div>
+
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="ssidModal">
+      <div id="ssidContent">
+        <span
+          class="close"
+          onclick="document.getElementById('ssidModal').style.display='none'"
+          >&times;</span
+        >
+        <h3>WiFi Access Granted</h3>
+        <p><strong>SSID:</strong> A4-0481</p>
+        <p><strong>Password:</strong> Guest@481</p>
+      </div>
+    </div>
+
+    <!-- Access & Payment Policy Section (Initially Hidden) -->
+    <div
+      id="accessPolicy"
+      style="display: none; padding: 20px; border-top: 1px solid #ccc"
+    >
+      <h3>Usage & Payment Policy</h3>
+      <p>
+        This access portal is available only to users within a limited
+        geographic area (e.g., near the Park or surrounding Villas).
+      </p>
+
+      <p><strong>Access may be restricted or revoked if:</strong></p>
+      <ul style="margin: 10px 0 0 20px">
+        <li>Your payment is not received, verified, or is later disputed.</li>
+        <li>
+          You attempt to use the service from outside the authorized coverage
+          area.
+        </li>
+        <li>
+          There is misuse, suspicious behavior, or violation of any usage or
+          fair use policies.
+        </li>
+        <li>Automated or fraudulent access attempts are detected.</li>
+        <li>Access credentials are shared without authorization.</li>
+      </ul>
+
+      <p style="margin-top: 15px">
+        We reserve the right to suspend or permanently revoke access in case of
+        any of the above violations. Payment once made is non-refundable unless
+        technical issues prevent access entirely.
+      </p>
+
+      <p>
+        For queries, clarifications, or appeals, please contact support
+        directly.
+      </p>
+    </div>
+
+    <!-- GDPR and Privacy Policy Section (Initially Hidden) -->
+    <div
+      id="privacyPolicy"
+      style="
+        display: none;
+        padding: 20px;
+        background: #f1f1f1;
+        margin-top: 20px;
+        font-family: sans-serif;
+        color: #333;
+      "
+    >
+      <h3>GDPR & Privacy Policy</h3>
+      <p>
+        At <strong>utkarshpandey.com</strong>, your privacy is important to us.
+        We comply with the General Data Protection Regulation (GDPR) and are
+        committed to safeguarding your personal information.
+      </p>
+
+      <h4>Information We Collect</h4>
+      <ul>
+        <li>
+          Personal details such as name, email, and phone number provided via
+          our forms.
+        </li>
+        <li>
+          Device information including MAC addresses solely for WiFi
+          provisioning.
+        </li>
+      </ul>
+
+      <h4>Why We Collect</h4>
+      <p>We use this data to:</p>
+      <ul>
+        <li>Grant secure WiFi access.</li>
+        <li>Improve user experience and offer better services.</li>
+        <li>
+          Contact you for any issues or follow-ups related to your selected
+          plan.
+        </li>
+      </ul>
+
+      <h4>Your Rights</h4>
+      <ul>
+        <li>
+          You can request access, correction, or deletion of your data at any
+          time.
+        </li>
+        <li>We never sell or share your personal data with third parties.</li>
+      </ul>
+
+      <h4>Data Retention</h4>
+      <p>
+        Your data is retained only as long as necessary to fulfill the purpose
+        for which it was collected, unless otherwise required by law.
+      </p>
+
+      <p>
+        For more information or to exercise your rights, contact us at
+        <a href="mailto:utkarshpandey_202210101180005+wifiUser@srmu.ac.in"
+          >utkarshpandey_202210101180005+wifiUser@srmu.ac.in</a
+        >.
+      </p>
+    </div>
+
+    <footer
+      style="
+        background-color: #f8f9fa;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        font-family: sans-serif;
+        font-size: 14px;
+        color: #333;
+      "
+    >
+      <p>
+        <strong>Locate:</strong> Villa 481 - for any support or query |
+        <button
+          onclick="togglePrivacy()"
+          style="
+            margin-top: 10px;
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+          "
+        >
+          GDPR & Privacy Policy
+        </button>
+        |
+        <button
+          onclick="document.getElementById('accessPolicy').style.display='block'"
+          style="
+            margin-top: 10px;
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+          "
+        >
+          Usage & Payment Policy
+        </button>
+        |
+        <a
+          href="mailto:utkarshpandey_202210101180005+wifiUser@srmu.ac.in"
+          style="
+            margin-top: 10px;
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+          "
+          >Support</a
+        >
+      </p>
+
+      <p>
+        © <span id="year"></span>
+        <a
+          href="https://utkarshpandey.com"
+          style="text-decoration: none; color: inherit"
+          >utkarshpandey.com</a
+        >. All rights reserved.
+      </p>
+    </footer>
+
+    <script>
+      // Set current year dynamically
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      function togglePrivacy() {
+        const policy = document.getElementById("privacyPolicy");
+        policy.style.display =
+          policy.style.display === "none" ? "block" : "none";
+      }
+    </script>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        push,
+        set,
+      } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyD0BPfZZW59KWYaa361uL6Ks3MuSRqaZ28",
+        authDomain: "wifi-sharing-portal.firebaseapp.com",
+        databaseURL: "https://wifi-sharing-portal-default-rtdb.firebaseio.com",
+        projectId: "wifi-sharing-portal",
+        storageBucket: "wifi-sharing-portal.appspot.com",
+        messagingSenderId: "90172505883",
+        appId: "1:90172505883:web:05cee1f89dbbc435e99dbe",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+
+      window.submitForm = function (event) {
+        event.preventDefault();
+
+        const plan = document.getElementById("selectedPlan").value;
+        const ssidContent = document.getElementById("ssidContent");
+
+        const name = document.querySelector('input[type="text"]').value;
+        const email = document.querySelector('input[type="email"]').value;
+        const phone = document.querySelector('input[type="tel"]').value;
+        const mac = document.querySelectorAll('input[type="text"]')[1].value;
+
+        const userRef = ref(database, "wifiUsers");
+        push(userRef, {
+          timestamp: new Date().toLocaleString("en-IN", {
+            timeZone: "Asia/Kolkata",
+          }),
+          name,
+          email,
+          phone,
+          plan,
+          mac,
+        })
+          .then(() => {
+            console.log("✅ Data saved to Firebase");
+
+            let ssid = "",
+              password = "";
+
+            switch (plan) {
+              case "Basic Plan":
+                ssid = "Free Internet @Villa481";
+                password = "<OPEN>";
+                break;
+              case "Flexi Plan":
+                ssid = "A4-0481";
+                password = "Guest@481";
+                break;
+              case "Premium Plan":
+                ssid = "A4-0481";
+                password = "Guest@481";
+                break;
+              case "Membership Plan":
+                ssid = "A4-0481";
+                password = "Guest@481";
+                break;
+            }
+
+            ssidContent.innerHTML = `
+        <span class="close" onclick="document.getElementById('ssidModal').style.display='none'">&times;</span>
+        <h3>WiFi Access Granted</h3>
+        <p><strong>SSID:</strong> ${ssid}</p>
+        <p><strong>Password:</strong> ${password}</p>
+      `;
+            document.getElementById("ssidModal").style.display = "block";
+
+            document.getElementById("planForm").reset();
+          })
+          .catch((error) => {
+            console.error("❌ Firebase error:", error);
+            alert("Error saving data: " + error.message);
+          });
+
+        return false;
+      };
+
+      window.openForm = function (plan) {
+        document.getElementById("selectedPlan").value = plan;
+        document.getElementById("formModal").style.display = "block";
+
+        document
+          .querySelectorAll(".qr-code")
+          .forEach((qr) => (qr.style.display = "none"));
+
+        if (plan === "Basic Plan")
+          document.getElementById("qrBasic").style.display = "block";
+        else if (plan === "Flexi Plan")
+          document.getElementById("qrFlexi").style.display = "block";
+        else if (plan === "Premium Plan")
+          document.getElementById("qrPremium").style.display = "block";
+        else if (plan === "Membership Plan")
+          document.getElementById("qrMembership").style.display = "block";
+      };
+
+      window.closeForm = function () {
+        document.getElementById("formModal").style.display = "none";
+      };
+    </script>
+  </body>
+</html>
