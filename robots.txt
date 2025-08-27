@@ -2,5 +2,6 @@ User-agent: *
 Disallow: /assets/
 Disallow: /images/
 Disallow: /wifi/
+Disallow: /cv/documents/
 
 Sitemap: https://utkarshpandey.com/sitemap.xml
