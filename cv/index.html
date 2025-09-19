@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Auto File List</title>
-</head>
-<body>
-  <h2>Available Documents</h2>
-  <ul id="fileList"></ul>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auto File List</title>
+  </head>
+  <body>
+    <h2>Available Documents</h2>
+    <ul id="fileList"></ul>
 
-  <script>
-    const repoOwner = "UraniumUtkarsh";
-    const repoName = "UraniumUtkarsh.github.io";
-    const branch = "main"; // or master
+    <script>
+            const repoOwner = "UraniumUtkarsh";
+            const repoName = "UraniumUtkarsh.github.io";
+            const branch = "main"; // or master
 
-    fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/cv/documents/`)
-      .then(response => response.json())
-      .then(data => {
-        const list = document.getElementById("fileList");
-        data.forEach(item => {
-          if (item.type !== "file") return; // only list files
-          let li = document.createElement("li");
-          let a = document.createElement("a");
-          a.href = item.download_url;
-          a.textContent = item.name;
-          a.target = "_blank"; // open in new tab (viewable if browser supports)
-          li.appendChild(a);
-          list.appendChild(li);
-        });
+            fetch('https://api.github.com/repos/${repoOwner}/${repoName}/contents/cv/documents/')
+                 .then(response => response.json())
+                 .then(data => { const list = document.getElementById("fileList"); data.forEach(item => {
+                  if (!item.type.includes("file")) return; // only list files
+                 let li = document.createElement("li");
+                 let a = document.createElement("a");
+                 a.href = item.download_url;
+                 a.textContent = item.name;
+                 a.download = item.name;
+                 li.appendChild(a);
+                 list.appendChild(li);
+              }
+          );
       });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
