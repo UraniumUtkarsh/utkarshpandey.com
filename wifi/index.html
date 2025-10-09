@@ -143,10 +143,75 @@
         top: 10px;
         right: 10px;
       }
+      .banner {
+        background: #fff;
+        color: #fc5e5e;
+        padding: 15px;
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      /* FAQs */
+      .faq-section {
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      .faq-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid #ddd;
+      }
+
+      .faq-question {
+        background: none;
+        border: none;
+        width: 100%;
+        text-align: left;
+        padding: 10px 0;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: bold;
+        outline: none;
+      }
+
+      .faq-answer {
+        display: none;
+        padding: 0 0 10px 0;
+        font-size: 0.95rem;
+        color: #444;
+      }
+
+      .faq-question:after {
+        content: "+";
+        float: right;
+      }
+
+      .faq-question.active:after {
+        content: "-";
+      }
+
+      .faq-question.active + .faq-answer {
+        display: block;
+      }
     </style>
   </head>
   <body>
-    <h1>WiFi Sharing Access Plans (Villa-481)</h1>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <h1><i class="fa fa-wifi"></i> WiFi Sharing Access Plans (Villa-481)</h1>
+
+    <div class="banner">
+      🛜 <strong>SSID: A4-0481 </strong> - If you see this network, you can
+      become a paid partner and enjoy our exclusive plans.
+    </div>
+
     <p>
       <center>
         <strong>⚠️ Note:</strong> This WiFi access portal is intended for users
@@ -159,7 +224,8 @@
         <h2>Basic Plan</h2>
         <p class="price">Free</p>
         <ul>
-          <li>30 Mbps speed</li>
+          <li><b>SSID: Free Internet @Villa481</b></li>
+          <li>15 Mbps speed</li>
           <li>Access: 5 PM – 11:30 PM</li>
           <li>Unlimited usage during hours</li>
         </ul>
@@ -168,16 +234,17 @@
 
       <div class="card">
         <h2>Flexi Plan</h2>
-        <p class="price">₹51 / Day</p>
+        <p class="price">₹51</p>
         <ul>
           <li>30 Mbps speed</li>
-          <li>Valid for 24 hours</li>
+          <li>Early Bird Offer: Valid upto 31st</li>
+          <strike><li>Valid for 24 hours</li></strike>
           <li>Up to 20 GB data</li>
         </ul>
         <button class="btn" onclick="openForm('Flexi Plan')">Select</button>
       </div>
 
-      <div class="card">
+      <!-- <div class="card">
         <h2>Premium Plan</h2>
         <p class="price">₹301 / Month</p>
         <ul>
@@ -204,7 +271,7 @@
         >
           Join Now
         </button>
-      </div>
+      </div> -->
     </div>
 
     <div id="formModal" class="modal">
@@ -265,6 +332,48 @@
           <button type="submit" class="btn">Submit</button>
         </form>
       </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <!-- Hidden FAQ Section -->
+    <div
+      id="faq-section"
+      style="
+        display: none;
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+      "
+    >
+      <h3 style="margin-bottom: 10px">Frequently Asked Questions (FAQs)</h3>
+      <ul style="list-style-type: none; padding: 0">
+        <li style="margin-bottom: 10px">
+          <strong>1. If the network goes down or WiFi disappears?</strong><br />
+          You will be compensated by that hour of non-availability when service
+          resumes.
+        </li>
+        <li style="margin-bottom: 10px">
+          <strong>2. Whom to contact for network or payment issues?</strong
+          ><br />
+          Utkarsh Pandey.
+        </li>
+        <li style="margin-bottom: 10px">
+          <strong>3. Why choose us?</strong><br />
+          Secured network, monitored and managed by a cyber security
+          professional.
+        </li>
+        <li style="margin-bottom: 10px">
+          <strong>4. What will happen to my MAC address?</strong><br />
+          It is used to keep the connection live or remove it as per the
+          validity. Data is deleted after a week.
+        </li>
+        <li>
+          <strong>5. Refund policy?</strong><br />
+          No, payment made is non-returnable.
+        </li>
+      </ul>
     </div>
 
     <div id="ssidModal">
@@ -423,6 +532,14 @@
         >
           Usage & Payment Policy
         </button>
+        |
+        <a
+          href="javascript:void(0)"
+          onclick="document.getElementById('faq-section').style.display='block'"
+          style="color: #007bff; text-decoration: none"
+        >
+          FAQs
+        </a>
         |
         <a
           href="mailto:utkarshpandey_202210101180005+wifiUser@srmu.ac.in"
