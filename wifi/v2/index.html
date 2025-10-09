@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WiFi Sharing Access Plans</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 2rem;
+        background: #f5f7fa;
+        color: #333;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .plans {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        padding: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card h2 {
+        margin-top: 0;
+        font-size: 1.4rem;
+      }
+      .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+        color: #007bff;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+      .membership {
+        background: linear-gradient(135deg, #ffd700, #ffa500);
+        color: #000;
+      }
+      .membership h2 {
+        color: #000;
+      }
+      .btn {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .btn:hover {
+        background: #0056b3;
+      }
+      /* Modal Styling */
+      #ssidModal {
+        display: none;
+        position: fixed;
+        z-index: 11;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+      }
+      #ssidContent {
+        background: white;
+        padding: 2rem;
+        max-width: 400px;
+        margin: 15% auto;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+      }
+      #ssidContent .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      .banner {
+        background: #007bff;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WiFi Sharing Access Plans (Villa-481)</h1>
+
+      <!-- Top SSID Banner -->
+    <div class="banner">
+      🛜 <strong>SSID:</strong> A4-0481 - If you see this network📶, you can
+      become a paid partner and enjoy our exclusive plans.
+    </div>
+
+    <!-- Plans Section -->
+    <div class="plans">
+      <div class="card">
+        <h2>Basic Plan</h2>
+        <p class="price">Free</p>
+        <ul>
+          <li><b>SSID: Free Internet @Villa481</b></li>
+          <li>Access: 5 PM – 11:30 PM</li>
+          <li>Unlimited usage during hours</li>
+        </ul>
+        <!-- No payment needed -->
+        <a href="?paid=true&plan=Basic%20Plan" class="btn">Get Access Now</a>
+      </div>
+
+      <div class="card">
+        <h2>Flexi Plan</h2>
+        <p class="price">₹51 / Day</p>
+        <ul>
+          <li>30 Mbps speed</li>
+          <li>Valid for 24 hours</li>
+          <li>Up to 20 GB data</li>
+        </ul>
+        <!-- Razorpay Button -->
+        <form>
+          <script
+            src="https://checkout.razorpay.com/v1/payment-button.js"
+            data-payment_button_id="pl_R3CyQ7I6YKVpLk"
+            async
+          ></script>
+        </form>
+      </div>
+
+      <!-- <div class="card">
+        <h2>Premium Plan</h2>
+        <p class="price">₹301 / Month</p>
+        <ul>
+          <li>30 Mbps speed</li>
+          <li>30 days validity</li>
+          <li>Up to 320 GB data</li>
+        </ul>
+        <div
+          class="razorpay-embed-btn"
+          data-url="YOUR_RAZORPAY_LINK_FOR_PREMIUM"
+          data-text="Pay Now"
+          data-color="#528FF0"
+          data-size="large"
+        ></div>
+      </div>
+
+      <div class="card membership">
+        <h2>Membership Plan</h2>
+        <p class="price">₹551 / Month</p>
+        <ul>
+          <li>30–50 Mbps speed</li>
+          <li>30 days validity</li>
+          <li>Up to 450 GB data</li>
+          <li>Priority Access</li>
+        </ul>
+        <div
+          class="razorpay-embed-btn"
+          data-url="YOUR_RAZORPAY_LINK_FOR_MEMBERSHIP"
+          data-text="Join Now"
+          data-color="#000000"
+          data-size="large"
+        ></div>
+      </div> -->
+    </div>
+
+    <!-- Hidden Form (Shown only after payment redirect) -->
+    <div id="paymentFormSection" style="display: none; margin-top: 30px">
+      <h2>Complete Your Registration</h2>
+      <form id="planForm" onsubmit="return submitForm(event)">
+        <label>Full Name *</label>
+        <input type="text" required />
+        <label>Email Address *</label>
+        <input type="email" required />
+        <label>Phone *</label>
+        <input type="tel" required />
+        <label>Plan Selected</label>
+        <input type="text" id="selectedPlan" readonly />
+        <label>Device MAC (Optional)</label>
+        <input type="text" />
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+
+    <!-- SSID Modal -->
+    <div id="ssidModal">
+      <div id="ssidContent">
+        <span
+          class="close"
+          onclick="document.getElementById('ssidModal').style.display='none'"
+          >&times;</span
+        >
+        <h3>WiFi Access Granted</h3>
+        <p><strong>SSID:</strong> A4-0481</p>
+        <p><strong>Password:</strong> Guest@481</p>
+      </div>
+    </div>
+
+    <!-- Razorpay Script -->
+    <script src="https://cdn.razorpay.com/static/embed_btn/bundle.js"></script>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        push,
+      } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyD0BPfZZW59KWYaa361uL6Ks3MuSRqaZ28",
+        authDomain: "wifi-sharing-portal.firebaseapp.com",
+        databaseURL: "https://wifi-sharing-portal-default-rtdb.firebaseio.com",
+        projectId: "wifi-sharing-portal",
+        storageBucket: "wifi-sharing-portal.appspot.com",
+        messagingSenderId: "90172505883",
+        appId: "1:90172505883:web:05cee1f89dbbc435e99dbe",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+
+      // Detect payment redirect
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("paid") === "true") {
+        document.getElementById("paymentFormSection").style.display = "block";
+        document.getElementById("selectedPlan").value =
+          urlParams.get("plan") || "";
+      }
+
+      // Form submission to Firebase
+      window.submitForm = function (event) {
+        event.preventDefault();
+        const name = document.querySelector(
+          '#planForm input[type="text"]'
+        ).value;
+        const email = document.querySelector(
+          '#planForm input[type="email"]'
+        ).value;
+        const phone = document.querySelector(
+          '#planForm input[type="tel"]'
+        ).value;
+        const plan = document.getElementById("selectedPlan").value;
+        const mac = document.querySelectorAll('#planForm input[type="text"]')[1]
+          .value;
+
+        const userRef = ref(database, "wifiUsers");
+        push(userRef, {
+          timestamp: new Date().toLocaleString("en-IN", {
+            timeZone: "Asia/Kolkata",
+          }),
+          name,
+          email,
+          phone,
+          plan,
+          mac,
+        })
+          .then(() => {
+            let ssid = "A4-0481",
+              password = "Guest@481";
+            if (plan === "Basic Plan") {
+              ssid = "Free Internet @Villa481";
+              password = "<OPEN>";
+            }
+            document.getElementById("ssidContent").innerHTML = `
+          <span class="close" onclick="document.getElementById('ssidModal').style.display='none'">&times;</span>
+          <h3>WiFi Access Granted</h3>
+          <p><strong>SSID:</strong> ${ssid}</p>
+          <p><strong>Password:</strong> ${password}</p>`;
+            document.getElementById("ssidModal").style.display = "block";
+            document.getElementById("planForm").reset();
+          })
+          .catch((error) => alert("Error saving data: " + error.message));
+        return false;
+      };
+    </script>
+  </body>
+</html>

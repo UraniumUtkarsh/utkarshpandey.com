@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Links | Utkarsh Pandey</title>
+  <link rel="stylesheet" href="/assets/css.css" type="text/css" />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --hover: #1e40af;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    body {
+      background: var(--bg);
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      min-height: 100vh;
+    }
+    header {
+      width: 100%;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .left {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    main {
+      text-align: center;
+      margin-top: 12vh;
+    }
+    h2 {
+      font-size: 1.6rem;
+      color: #111827;
+      margin-bottom: 2rem;
+    }
+    .meet-link {
+      display: block;
+      margin: 12px auto;
+      padding: 14px 32px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      box-shadow: var(--shadow);
+      width: fit-content;
+      transition: all 0.25s ease;
+    }
+    .meet-link:hover {
+      background: var(--hover);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="left">Utkarsh Pandey</div>
+  </header>
+
+  <main>
+    <h2>Join a Meeting (Live)</h2>
+
+    <a id="link1" class="meet-link" href="https://meet.google.com/yec-wgro-cky" target="_blank">🟢 Open Meet</a>
+    <a id="link2" class="meet-link" href="https://meet.google.com/tjg-gbpx-gxs" target="_blank">🎓 College ID Meet</a>
+    <a id="link3" class="meet-link" href="https://meet.google.com/uno-dvth-mqd" target="_blank">🧑‍💼 Personal Meet</a>
+  </main>
+
+
+  <script>
+    // Allow both #hash and /meet/link1 styles
+    window.addEventListener("load", () => {
+      const path = window.location.pathname.split("/").filter(Boolean);
+      const hash = window.location.hash;
+      let id = null;
+
+      // If user visits /meet/link1
+      if (path.length > 1 && path[0] === "meet") {
+        id = path[1];
+      }
+
+      // If user visits /meet#link2
+      if (hash && !id) {
+        id = hash.replace("#", "");
+      }
+
+      if (id) {
+        const el = document.getElementById(id);
+        if (el) {
+          // Highlight and scroll
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.style.boxShadow = "0 0 10px 3px rgba(37,99,235,0.6)";
+          el.style.transform = "scale(1.05)";
+          setTimeout(() => {
+            el.style.transform = "scale(1)";
+          }, 1000);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
