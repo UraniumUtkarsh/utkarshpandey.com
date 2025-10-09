@@ -3,5 +3,6 @@ Disallow: /assets/
 Disallow: /images/
 Disallow: /wifi/
 Disallow: /cv/documents/
+Disallow: /meet/
 
 Sitemap: https://utkarshpandey.com/sitemap.xml
