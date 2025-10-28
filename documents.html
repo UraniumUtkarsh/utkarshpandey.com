@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Utkarsh's documents - Secure Access</title>
+<style>
+  :root{
+    --bg1:#071023; --bg2:#0f2a3a; --accent:#00bcd4; --muted:rgba(255,255,255,0.78);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;}
+  body{
+    display:flex; flex-direction:column; min-height:100vh;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:white;
+  }
+
+  /* header at top */
+  header{
+    padding:18px 20px; text-align:left;
+    border-bottom:1px solid rgba(255,255,255,0.03);
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  }
+  header h1{margin:0;font-size:20px;letter-spacing:0.2px;}
+  header p{margin:4px 0 0;color:var(--muted);font-size:13px;}
+
+  /* main center area */
+  main{
+    flex:1; display:flex; align-items:center; justify-content:center;
+    padding:24px;
+  }
+
+  .center-col{
+    width:100%; max-width:520px;
+    display:flex; flex-direction:column; gap:12px; align-items:stretch;
+    padding:0 8px;
+  }
+
+  label{font-size:14px;color:var(--muted); margin-bottom:4px;}
+  input[type="password"]{
+    width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.02); color:white; font-size:16px; outline:none;
+  }
+  .row{
+    display:flex; gap:10px; align-items:center;
+  }
+  button{
+    padding:11px 16px; border-radius:10px; border:none; cursor:pointer; font-weight:700;
+    background:linear-gradient(90deg,var(--accent),#07a3b7); color:#012;
+  }
+  .btn-ghost{
+    background:transparent; border:1px solid rgba(255,255,255,0.08); color:white; font-weight:600;
+    padding:10px 14px; border-radius:10px;
+  }
+
+  .msg{height:18px; color:#ffb3b3; font-size:13px; margin-top:6px; visibility:hidden;}
+
+  /* footer anchored to bottom */
+  footer{
+    padding:12px 20px; text-align:center; color:var(--muted); font-size:13px;
+    border-top:1px solid rgba(255,255,255,0.03);
+  }
+  footer a{color:inherit; text-decoration:none; font-weight:600;}
+
+  /* small screens: stack buttons */
+  @media (max-width:420px){
+    .row{flex-direction:column; align-items:stretch;}
+    button{width:100%;}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Utkarsh's documents</h1>
+    <p>Secure link - enter passcode to continue</p>
+  </header>
+
+  <main>
+    <div class="center-col" role="main">
+      <div>
+        <label for="pass">Passcode</label>
+        <input id="pass" type="password" inputmode="text" autocomplete="off" placeholder="Enter passcode" aria-label="Passcode">
+      </div>
+
+      <div class="row" style="justify-content:flex-start;">
+        <button id="accessBtn" onclick="checkPass()">Access</button>
+        <button class="btn-ghost" onclick="clearInput()">Clear</button>
+        <div id="msg" class="msg" aria-live="polite"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://utkarshpandey.com" target="_blank" rel="noopener">&nbsp;©<span id="yr"></span> utkarshpandey.com</a>
+  </footer>
+
+<script>
+  const _b64_pass = "MDEwMQ==";
+  const _b64_url  = "aHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL2RyaXZlL2ZvbGRlcnMvMVdyb0NQRHRTR2dUV3dLaERjeFJVenllU3NkY2FtUkEzP3VzcD1zaGFyaW5n";
+
+  const msgEl = document.getElementById('msg');
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  function showMessage(text, visible=true){
+    msgEl.textContent = text;
+    msgEl.style.visibility = visible ? 'visible' : 'hidden';
+  }
+  function clearInput(){
+    const i = document.getElementById('pass');
+    i.value = '';
+    showMessage('', false);
+    i.focus();
+  }
+
+  function checkPass(){
+    const input = (document.getElementById('pass').value || '').trim();
+    if(!input){
+      showMessage('Enter the passcode');
+      return;
+    }
+    try{
+      const pass = atob(_b64_pass);
+      const link = atob(_b64_url);
+
+      if (constantTimeEqual(input, pass)) {
+        showMessage('Pass accepted — redirecting...', true);
+        setTimeout(()=> window.location.href = link, 350);
+      } else {
+        showMessage('Incorrect passcode.');
+        setTimeout(()=> showMessage('', false), 2000);
+      }
+    }catch(e){
+      showMessage('Configuration error. Contact owner.');
+      console.error(e);
+    }
+  }
+
+  function constantTimeEqual(a,b){
+    if (a.length !== b.length) return false;
+    let res = 0;
+    for (let i=0;i<a.length;i++){ res |= a.charCodeAt(i) ^ b.charCodeAt(i); }
+    return res === 0;
+  }
+
+  document.getElementById('pass').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') checkPass();
+  });
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+</body>
+</html>
