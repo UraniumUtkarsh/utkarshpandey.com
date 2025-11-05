@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateAgeCounter() {
         // !! IMPORTANT: REPLACE THIS WITH HER ACTUAL BIRTH DATE AND TIME !!
         // Format: YYYY-MM-DDTHH:MM:SS (e.g., '2004-11-05T00:00:00')
-        const birthDate = new Date('2004-11-05T00:00:00'); 
+        const birthDate = new Date('2004-11-06T00:00:00'); 
         const now = new Date();
 
         let years = now.getFullYear() - birthDate.getFullYear();
