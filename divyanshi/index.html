@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Birthday Divyanshi!</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Pacifico&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- 
       Part 1: The Gift Box Screen
       This is the first thing she will see.
     -->
     <div id="gift-screen">
-        <h1 class="gift-title">Happy 21st Birthday, Divyanshi!</h1>
-        <div id="gift-box" role="button" aria-label="Open your surprise">
-            🎁
-        </div>
-        <p class="gift-prompt">Click the box to open your surprise!</p>
+      <h1 class="gift-title">Happy 21st Birthday, Divyanshi!</h1>
+      <div id="gift-box" role="button" aria-label="Open your surprise">🎁</div>
+      <p class="gift-prompt">Click the box to open your surprise!</p>
     </div>
 
     <!-- 
@@ -26,189 +26,228 @@
       This is hidden until the box is clicked.
     -->
     <div id="main-content">
-        
-        <!-- Hero Section -->
-        <header class="hero">
-            <h1 class="main-title">We're Celebrating You!</h1>
-            <p class="subtitle">Welcome to your very own birthday page miss clumsy!</p>
+      <!-- Hero Section -->
+      <header class="hero">
+        <h1 class="main-title">We're Celebrating You!</h1>
+        <p class="subtitle">
+          Welcome to your very own birthday page miss clumsy!
+        </p>
 
-            <!-- NEW: Age Counter -->
-            <div class="age-counter">
-                <p>Celebrating</p>
-                <div class="counter-grid">
-                    <div><span id="age-years">0</span>Years</div>
-                    <div><span id="age-months">0</span>Months</div>
-                    <div><span id="age-days">0</span>Days</div>
-                    <div><span id="age-hours">0</span>Hours</div>
-                    <div><span id="age-minutes">0</span>Minutes</div>
-                    <div><span id="age-seconds">0</span>Seconds</div>
-                </div>
-                <p>of an amazing life!</p>
+        <!-- NEW: Age Counter -->
+        <div class="age-counter">
+          <p>Celebrating</p>
+          <div class="counter-grid">
+            <div><span id="age-years">0</span>Years</div>
+            <div><span id="age-months">0</span>Months</div>
+            <div><span id="age-days">0</span>Days</div>
+            <div><span id="age-hours">0</span>Hours</div>
+            <div><span id="age-minutes">0</span>Minutes</div>
+            <div><span id="age-seconds">0</span>Seconds</div>
+          </div>
+          <p>of an amazing life!</p>
+        </div>
+        <!-- END: Age Counter -->
+      </header>
+
+      <!-- NEW: Wrapper for content to be unlocked -->
+      <div id="unlocked-content" class="hidden">
+        <!-- Section 2: Photo Carousel -->
+        <section id="memories" class="content-section">
+          <h2>A Few of Your Best Moments</h2>
+
+          <!-- START: Carousel Fix -->
+          <div class="carousel-container">
+            <div class="carousel-slide">
+              <img
+                src="utkarshpandey.com\divyanshi\assets\images\withDhannu.jpg"
+                alt="Memory 1"
+              />
             </div>
-            <!-- END: Age Counter -->
+            <div class="carousel-slide">
+              <img
+                src="utkarshpandey.com\divyanshi\assets\images\two.jpg"
+                alt="Memory 3"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img src="\divyanshi\assets\images\toSleep.jpg" alt="Memory 2" />
+            </div>
+            <div class="carousel-slide">
+              <img src="\divyanshi\assets\images\c3.jpg" alt="Memory 3" />
+            </div>
+            <div class="carousel-slide">
+              <img src="\divyanshi\assets\images\c4.jpg" alt="Memory 3" />
+            </div>
+            <div class="carousel-slide">
+              <img src="\divyanshi\assets\images\c5.jpg" alt="Memory 3" />
+            </div>
+            <div class="carousel-slide">
+              <img src="\divyanshi\assets\images\c6.jpg" alt="Memory 3" />
+            </div>
+            <div class="carousel-slide">
+              <img src="\divyanshi\assets\images\c7.jpg" alt="Memory 3" />
+            </div>
+            <div class="carousel-slide">
+              <img src="\divyanshi\assets\images\c8.jpg" alt="Memory 3" />
+            </div>
 
-        </header>
+            <!-- You can add more <div class="carousel-slide">...</div> here -->
 
-        <!-- NEW: Wrapper for content to be unlocked -->
-        <div id="unlocked-content" class="hidden">
+            <button class="carousel-btn prev" aria-label="Previous image">
+              &#10094;
+            </button>
+            <button class="carousel-btn next" aria-label="Next image">
+              &#10095;
+            </button>
+          </div>
+          <!-- END: Carousel Fix -->
+        </section>
+        <!--Section 2.1: Close friend's video Message-->
+        <section id="friends" class="content-section">
+          <h2>Wishes from the Close Friends!</h2>
+          <p class="friends-subtitle">
+            Click on a card to see a special message.
+          </p>
 
-            <!-- Section 2: Photo Carousel -->
-            <section id="memories" class="content-section">
-                <h2>A Few of Your Best Moments</h2>
-                
-                <!-- START: Carousel Fix -->
-                <div class="carousel-container">
-                    <div class="carousel-slide">
-                        <img src="utkarshpandey.com\divyanshi\assets\images\withDhannu.jpg" alt="Memory 1">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="utkarshpandey.com\divyanshi\assets\images\two.jpg" alt="Memory 3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="\divyanshi\assets\images\toSleep.jpg" alt="Memory 2">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="\divyanshi\assets\images\c3.jpg" alt="Memory 3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="\divyanshi\assets\images\c4.jpg" alt="Memory 3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="\divyanshi\assets\images\c5.jpg" alt="Memory 3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="\divyanshi\assets\images\c6.jpg" alt="Memory 3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="\divyanshi\assets\images\c7.jpg" alt="Memory 3">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="\divyanshi\assets\images\c8.jpg" alt="Memory 3">
-                    </div>
+          <div class="friends-grid">
+            <div
+              class="friend-card"
+              data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/dhannu.mp4"
+            >
+              .mp4">
+              <div class="friend-icon">🫂</div>
+              <h3>From: Dhannu Shree</h3>
+              <p>Click to play video!</p>
+            </div>
+          </div>
+        </section>
 
-                    <!-- You can add more <div class="carousel-slide">...</div> here -->
-
-                    <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
-                    <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
-                </div>
-                <!-- END: Carousel Fix -->
-
-            </section>
-            <!--Section 2.1: Close friend's video Message-->
-            <section id="friends" class="content-section">
-                <h2>Wishes from the Close Friends!</h2>
-                <p class="friends-subtitle">Click on a card to see a special message.</p>
-
-                <div class="friends-grid">
-                    <div class="friend-card" data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/dhannu.mp4">.mp4">
-                        <div class="friend-icon">🫂</div>
-                        <h3>From: Dhannu Shree</h3>
-                        <p>Click to play video!</p>
-                    </div>
-                </div>
-            </section>
-
-             <!-- 
+        <!-- 
               NEW: Section 2.2: Audio Message
               Added this new section for your audio.
             -->
-            <section id="audio-message" class="content-section">
-                <h2>You have a voice message from Kesar!</h2>
-                <p class="audio-subtitle">P.S. - Don't forget to turn your volume up!</p>
-                <audio controls class="audio-player" src="/divyanshi/assets/audio/kesar.opus">
-                    Your browser does not support the audio element.
-                </audio>
-            </section>
+        <section id="audio-message" class="content-section">
+          <h2>You have a voice message from Kesar!</h2>
+          <p class="audio-subtitle">
+            P.S. - Don't forget to turn your volume up!
+          </p>
+          <audio
+            controls
+            class="audio-player"
+            src="/divyanshi/assets/audio/kesar.opus"
+          >
+            Your browser does not support the audio element.
+          </audio>
+        </section>
 
-            <!-- Section 3: Creative's Video Messages -->
-            <section id="friends" class="content-section">
-                <h2>Wishes from the Creative Crew!</h2>
-                <p class="friends-subtitle">Click on a card to see a special message.</p>
+        <!-- Section 3: Creative's Video Messages -->
+        <section id="friends" class="content-section">
+          <h2>Wishes from the Creative Crew!</h2>
+          <p class="friends-subtitle">
+            Click on a card to see a special message.
+          </p>
 
-                <div class="friends-grid">
-                    
-                    <!-- Friend Card 1 -->
-                    <!-- 
+          <div class="friends-grid">
+            <!-- Friend Card 1 -->
+            <!-- 
                       IMPORTANT: Replace 'path/to/video1.mp4' with the actual video file path or URL for each friend.
                       I've used a public test video so you can see it work.
                     -->
-                    <div class="friend-card" data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/supatim.mp4">
-                        <div class="friend-icon">🎉</div>
-                        <h3>From: Supatim</h3>
-                        <p>Click to play video!</p>
-                    </div>
+            <div
+              class="friend-card"
+              data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/supatim.mp4"
+            >
+              <div class="friend-icon">🎉</div>
+              <h3>From: Supatim</h3>
+              <p>Click to play video!</p>
+            </div>
 
-                    <!-- Friend Card 2 -->
-                    <div class="friend-card" data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/umar.mp4">
-                        <div class="friend-icon">✨</div>
-                        <h3>From: Umar</h3>
-                        <p>Click to play video!</p>
-                    </div>
+            <!-- Friend Card 2 -->
+            <div
+              class="friend-card"
+              data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/umar.mp4"
+            >
+              <div class="friend-icon">✨</div>
+              <h3>From: Umar</h3>
+              <p>Click to play video!</p>
+            </div>
 
-                    <!-- Friend Card 3 -->
-                    <div class="friend-card" data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/samarth.mp4">
-                        <div class="friend-icon">👦</div>
-                        <h3>From: Samarth</h3>
-                        <p>Click to play video!</p>
-                    </div>
+            <!-- Friend Card 3 -->
+            <div
+              class="friend-card"
+              data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/samarth.mp4"
+            >
+              <div class="friend-icon">👦</div>
+              <h3>From: Samarth</h3>
+              <p>Click to play video!</p>
+            </div>
 
-                    <!-- Add more cards here... -->
-                    <!-- Friend Card 4 -->
-                    <div class="friend-card" data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/nitin.mp4">
-                        <div class="friend-icon">🥳</div>
-                        <h3>From: Nitin bhaiya</h3>
-                        <p>Click to play video!</p>
-                    </div>
+            <!-- Add more cards here... -->
+            <!-- Friend Card 4 -->
+            <div
+              class="friend-card"
+              data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/nitin.mp4"
+            >
+              <div class="friend-icon">🥳</div>
+              <h3>From: Nitin bhaiya</h3>
+              <p>Click to play video!</p>
+            </div>
 
-                    <!-- Friend Card 5 -->
-                    <div class="friend-card" data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/vinay.mp4">
-                        <div class="friend-icon">😵‍💫</div>
-                        <h3>From: Vinay</h3>
-                        <p>Click to play video!</p>
-                    </div>
+            <!-- Friend Card 5 -->
+            <div
+              class="friend-card"
+              data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/vinay.mp4"
+            >
+              <div class="friend-icon">😵‍💫</div>
+              <h3>From: Vinay</h3>
+              <p>Click to play video!</p>
+            </div>
 
-                    <!-- Friend Card 6 -->
-                    <div class="friend-card" data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/jahnvi.mp4">
-                        <div class="friend-icon">👧</div>
-                        <h3>From: Jahnvi</h3>
-                        <p>Click to play video!</p>
-                    </div>
+            <!-- Friend Card 6 -->
+            <div
+              class="friend-card"
+              data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/jahnvi.mp4"
+            >
+              <div class="friend-icon">👧</div>
+              <h3>From: Jahnvi</h3>
+              <p>Click to play video!</p>
+            </div>
 
-                    <!-- Friend Card 7 -->
-                    <div class="friend-card" data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/ayaan.mp4">
-                        <div class="friend-icon">👧</div>
-                        <h3>From: Ayaan</h3>
-                        <p>Click to play video!</p>
-                    </div>
-                    
+            <!-- Friend Card 7 -->
+            <div
+              class="friend-card"
+              data-video-src="http://utkarshpandey.com/divyanshi/assets/videos/ayaan.mp4"
+            >
+              <div class="friend-icon">👧</div>
+              <h3>From: Ayaan</h3>
+              <p>Click to play video!</p>
+            </div>
+          </div>
+        </section>
 
-                </div>
-            </section>
+        <!-- Section 4: Your Personal Message -->
+        <section id="letter" class="content-section">
+          <h2>A Letter to My Super Special Friend</h2>
+          <div class="letter-content">
+            Hey Divyanshi, <br>
+            Where do I even begin? Honestly, thank your mom for bringing you into this world because you’ve been nothing short of a <br>
+            blessing and a cure to me. Thank you, Miss Squirrel, for being there through everything, teaching me things, sharing ideas, dropping <br>
+            random thoughts that somehow always make sense, and just being you. You’ve been that spark of warmth and chaos that keeps things real. <br>
+            So here’s to you, wishing you the happiest happy birthday, dear
+            Divyanshuuu! 🎉🐿️💫  <br>
+            <br>
+            With love,
+            <br>
+            Utkarsh 👀
+          </div>
+        </section>
 
-            <!-- Section 4: Your Personal Message -->
-            <section id="letter" class="content-section">
-                <h2>A Letter to My Super Special Friend</h2>
-                <div class="letter-content">
-                    <p>Hey Divyanshi,</p>
-                    <p>Where do I even begin? Honestly, thank your mom for bringing you into this world because you’ve
-                        been nothing short of a blessing and a cure to me. Thank you, Miss Squirrel, for being there through
-                        everything, teaching me things, sharing ideas, dropping random thoughts that somehow always
-                        make sense, and just being you.</p>
-                        <p>You’ve been that spark of warmth and chaos that keeps things real. So here’s to you, wishing you
-                            the happiest happy birthday, dear Divyanshuuu! 🎉🐿️💫</p>
-
-With love,
-Utkarsh 👀
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer>
-                <p>Made with ❤️ for Divyanshi</p>
-            </footer>
-
-        </div> <!-- END: unlocked-content wrapper -->
-
+        <!-- Footer -->
+        <footer>
+          <p>Made with ❤️ for Divyanshi</p>
+        </footer>
+      </div>
+      <!-- END: unlocked-content wrapper -->
     </div>
 
     <!-- 
@@ -216,16 +255,17 @@ Utkarsh 👀
       This is also hidden and only appears when a card is clicked.
     -->
     <div id="video-modal" class="modal">
-        <span class="modal-close">&times;</span>
-        <div class="modal-content">
-            <video id="modal-video" width="100%" controls>
-                <source src="" type="video/mp4">
-                Your browser does not support the video tag.
-            </video> <!-- This was </D>, now corrected -->
-        </div>
+      <span class="modal-close">&times;</span>
+      <div class="modal-content">
+        <video id="modal-video" width="100%" controls>
+          <source src="" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <!-- This was </D>, now corrected -->
+      </div>
     </div>
 
     <!-- Link the JavaScript file -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
