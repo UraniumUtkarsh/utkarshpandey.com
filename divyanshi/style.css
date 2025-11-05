@@ -1,0 +1,363 @@
+/* --- Global Styles & Fonts --- */
+:root {
+    --font-sans: 'Inter', sans-serif;
+    --font-cursive: 'Pacifico', cursive;
+    --color-dark-blue: #03045e;
+    --color-main-blue: #0077b6;
+    --color-light-blue: #a0c4ff;
+    --color-bg-light: #f7faff;
+    --color-white: #ffffff;
+    --color-text-dark: #333;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    overscroll-behavior: none;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+/* --- Part 1: Gift Screen --- */
+#gift-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--color-dark-blue), var(--color-main-blue));
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    /* This will be shown by default */
+}
+
+.gift-title {
+    font-family: var(--font-cursive);
+    font-size: 3rem;
+    margin: 0;
+    animation: fadeIn 1.5s ease-in;
+}
+
+#gift-box {
+    font-size: 10rem;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+#gift-box:hover {
+    transform: scale(1.1);
+}
+
+.gift-prompt {
+    font-size: 1.2rem;
+    animation: fadeIn 1.5s 0.5s both; /* 0.5s delay */
+}
+
+/* NEW: Class to hide content */
+.hidden {
+    display: none;
+}
+
+/* --- Part 2: Main Content --- */
+#main-content {
+    display: none; /* Hidden initially */
+    animation: fadeIn 1s ease-in; /* Will fade in with JS */
+}
+
+.content-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--color-dark-blue);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --- Hero --- */
+.hero {
+    background: linear-gradient(135deg, var(--color-main-blue), var(--color-light-blue));
+    color: var(--color-white);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.main-title {
+    font-family: var(--font-cursive);
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin: 10px 0 0;
+    font-weight: 400;
+}
+
+/* --- NEW: Age Counter Styles --- */
+.age-counter {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 30px auto 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.age-counter p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+    padding: 0 10px;
+}
+
+.counter-grid div {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+}
+
+.counter-grid div span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--color-white);
+    line-height: 1;
+}
+/* --- END: Age Counter Styles --- */
+
+/* --- Carousel --- */
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.carousel-slide {
+    display: none; /* Hidden by default */
+    width: 100%;
+    animation: fadeIn 0.5s;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+}
+
+/* Show the first slide */
+.carousel-slide:first-child {
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* --- Friends Grid --- */
+.friends-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.friend-card {
+    background: var(--color-white);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: var(--color-dark-blue);
+    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.friend-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 119, 182, 0.2);
+}
+
+.friend-icon {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.friend-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5rem;
+}
+
+.friend-card p {
+    color: var(--color-main-blue);
+    font-weight: 700;
+    margin: 0;
+}
+
+/* --- Letter --- */
+#letter {
+    background: var(--color-white);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.letter-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--color-dark-blue);
+    color: var(--color-light-blue);
+    margin-top: 40px;
+}
+
+/* --- Part 3: Video Modal --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+}
+
+#modal-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.modal-close {
+    color: #fff;
+    position: absolute;
+    top: -25px;
+    right: 5px;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* --- Confetti (for JS) --- */
+.confetti {
+    position: fixed;
+    top: -10px; /* Start above screen */
+    width: 10px;
+    height: 10px;
+    background-color: #f00; /* Will be randomized */
+    opacity: 0.9;
+    animation: drop 5s linear forwards;
+    z-index: 2000; /* Above everything */
+    pointer-events: none;
+}
+
+@keyframes drop {
+    0% { transform: translateY(0) rotate(0); }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .gift-title { font-size: 2rem; }
+    #gift-box { font-size: 8rem; }
+    .main-title { font-size: 2.5rem; }
+    .subtitle { font-size: 1.2rem; }
+    h2 { font-size: 2rem; }
+
+    /* --- NEW: Responsive Counter --- */
+    .counter-grid {
+        /* On small screens, stack to 3x2 */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .counter-grid div span {
+        font-size: 2rem;
+    }
+    /* --- END: Responsive Counter --- */
+
+    .friends-grid { grid-template-columns: 1fr; }
+    #letter { padding: 25px; }
+}
