@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utkarsh's Home</title>
+    <meta
+      name="description"
+      content="About Utkarsh Pandey aka UraniumUtkarsh — cybersecurity enthusiast, web developer, and creator of open‑source tools like steganography tool, Terminal‑Folio and more."
+    />
+    <link rel="stylesheet" href="/assets/css.css" type="text/css" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;
+      0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!--Comments-->
+  <!--flex is like wraps the space-->
+  <!--justify-content makes the section left and right-->
+  <!-- .firstSection > div selects direct child div of the section instead of further nested ones-->
+  <!-- .purple is used as an utility class-->
+  <body>
+    <script>
+      // Show popup after delay
+      window.onload = function () {
+        setTimeout(function () {
+          document.getElementById("terminalFolioPopup").style.display = "flex";
+        }, 2000); // 2 seconds delay
+      };
+
+      function closePopup() {
+        document.getElementById("terminalFolioPopup").style.display = "none";
+      }
+    </script>
+
+    <header>
+      <nav>
+        <!--left and right div sections-->
+        <div class="left">Utkarsh's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="/">Dashboard</a></li>
+            <li><s>Home</s></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="https://utkarshblogs14.blogspot.com">Blogs</a></li>
+            <li><a href="/contact-me.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="firstSection">
+        <!--Span to group and style portions of text or other inline elements without creating a new line or affecting 
+        the overall layout of the page-->
+        <!-- Element to contain animated typing -->
+        <div class="leftSection">
+          <div>Hello, I am <span class="purple">Utkarsh</span></div>
+          <div>and I am a passionate</div>
+          <span id="element"></span>
+
+          <div class="buttons">
+            <a href="/assets/CyberDetail_CV_UTKARSH_PANDEY.pdf" target="_blank"
+              ><button class="btn">Download Resume</button></a
+            >
+            <a href="https://github.com/UraniumUtkarsh/" target="_blank"
+              ><button class="btn">Visit Github</button></a
+            >
+            <a href="https://utkarshpandey.com/terminal-folio.html" target="_blank"
+              ><button class="btn">Terminal-Folio</button></a
+            >
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="/images/myself.png" alt="Developer Image" />
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="secondSection">
+        <span class="text-grey">What I have experienced so far</span>
+        <h1>Work Experience</h1>
+
+        <div class="box">
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              Technical Club Assistant Coordinator <i>(Jul 2023 - Oct 2024)</i>
+            </div>
+            <div class="vertical-desc">
+              Managed event logistics, scheduling, coordination, and participant
+              registration. Created and distributed event-related documentation
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              Tech Fest Co-Convener <i>(Apr 2024)</i>
+            </div>
+            <div class="vertical-desc">
+              Led VIVEKA Techfest 3.0 event planning and execution and automated
+              event processes using Python and enhanced event management
+              efficiency.
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              IEEE SRMU Stdnt Branch Volunteer <i>(Jul 2024 - Dec 2024)</i>
+            </div>
+            <div class="vertical-desc">
+              Proficient in using vTools for event management and reporting.
+              Organized technical events like workshops, coding competitions,
+              and seminars.
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              TechnoHacks Cybersecurity Red-Teaming Internship
+              <i>(Jun 2024 - Jul 2024)</i>
+            </div>
+            <div class="vertical-desc">
+              Hands-on experience with Kali Linux tools for OSINT, phishing,
+              penetration testing, and vulnerability assessment. Led
+              documentation, streamlined internal communication.
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="/images/developer.png" alt="" />
+            <div class="vertical-title">
+              AICTE & IBM-SkillsBuild Cybersecurity Internship
+              <i>(Jan 2025 - Feb 2025)</i>
+            </div>
+            <div class="vertical-desc">
+              Gained experience in Cryptography, Network Security, Python,
+              Problem-Solving, and Steganography (LSB approach)
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-first">
+          <h3>Let's Connect with Me</h3>
+        </div>
+        <div class="footer-second">
+          <section id="contact-me">
+            <ul>
+              <li>
+                <a href="https://www.linkedin.com/in/uranium-utkarsh-pandey"
+                  ><img src="/icons/linkedin.png" alt="Linkedin"
+                /></a>
+              </li>
+              <li>
+                <a href="https://www.github.com/UraniumUtkarsh"
+                  ><img src="/icons/github.png" alt="Github"
+                /></a>
+              </li>
+              <li>
+                <a href="mailto:utkarshpandey_202210101180005+utkarshpandeydotcom@srmu.ac.in"
+                  ><img src="/icons/email.png" alt="Email"
+                /></a>
+              </li>
+              <li>
+                <a href="https://x.com/UraniumUtkarsh"
+                  ><img src="/icons/x-logo.png" alt="Twitter"
+                /></a>
+              </li>
+              <li>
+                <a href="/contact-me.html"
+                  ><img src="/icons/forms.png" alt="Message for me"
+                /></a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="footer-rights">
+        Copyright &copy; utkarshpandey.com | All rights reserved | Made with 💓
+        in India
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "<i>Cybersecurity</i> enthusiast",
+          "<i>Bug</i> Hunter",
+          "<i>Digital Forensics</i> Practitioner",
+          "<i>Linux Explorer</i>",
+          "<i>Python</i> Coder",
+          "<i>Django</i> Backend Developer",
+          "<i>Cybersecurity</i> enthusiast.",
+        ],
+        typeSpeed: 50,
+      });
+    </script>
+
+    <!-- Terminal-Folio Popup -->
+    <div id="terminalFolioPopup" class="popup-overlay">
+      <div class="popup-content">
+        <h2>🚀 Try out Terminal-Folio</h2>
+        <p>Experience a terminal-style portfolio like no other!</p>
+        <a href="/terminal-folio.html" target="_blank" class="popup-btn"
+          >Launch Now</a
+        >
+        <button onclick="closePopup()" class="popup-close">✖</button>
+      </div>
+    </div>
+  </body>
+</html>
