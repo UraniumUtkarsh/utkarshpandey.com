@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Utkarsh's Social Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin:0;
+            font-family: Arial, sans-serif;
+            background:#e0e7ff;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            color:#111;
+            flex-direction:column;
+        }
+        .container {
+            text-align:center;
+            width:90%;
+            max-width:400px;
+        }
+        .profile-pic {
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            object-fit:cover;
+            margin-bottom:20px;
+            border:4px solid #4E73DF;
+        }
+        h1 {
+            margin:0 0 10px;
+        }
+        p {
+            margin:0 0 20px;
+            color:#555;
+        }
+        .link-btn {
+            display:block;
+            padding:15px;
+            margin:10px 0;
+            text-decoration:none;
+            border-radius:30px;
+            font-size:16px;
+            font-weight:bold;
+            transition: all 0.3s;
+            color:white;
+        }
+        .linkedin { background:#0077B5; }
+        .github { background:#333; }
+        .x { background:#1DA1F2; }
+        .instagram { background:#E1306C; }
+        .blogger { background:#F57D00; }
+
+        .link-btn:hover {
+            opacity:0.8;
+            transform:scale(1.05);
+        }
+
+        .back-btn {
+            display:inline-block;
+            margin-top:20px;
+            padding:10px 20px;
+            background:#6c757d;
+            color:white;
+            text-decoration:none;
+            border-radius:20px;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background:#5a6268;
+            transform:scale(1.05);
+        }
+
+        footer {
+            margin-top:30px;
+            font-size:14px;
+            color:#333;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile Pic -->
+        <img src="/images/myself_new.png" alt="Utkarsh Pandey" class="profile-pic">
+
+        <!-- Name & Short Intro -->
+        <h1>Utkarsh Pandey</h1>
+        <p>Cybersecurity & Development | Follow me on my socials</p>
+
+        <!-- Social Links -->
+        <a href="https://www.linkedin.com/in/uranium-utkarsh-pandey/" target="_blank" class="link-btn linkedin">LinkedIn</a>
+        <a href="https://github.com/UraniumUtkarsh" target="_blank" class="link-btn github">GitHub</a>
+        <a href="https://utkarshpandey.com/blogs" target="_blank" class="link-btn blogger">Blogger</a>
+        <a href="https://twitter.com/UraniumUtkarsh" target="_blank" class="link-btn x">X</a>
+        <a href="https://www.instagram.com/my.entirety/" target="_blank" class="link-btn instagram">Instagram</a>
+
+        <!-- Go Back Button -->
+        <a href="/index.html" class="back-btn">← Back to Dashboard</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 utkarshpandey.com
+    </footer>
+
+</body>
+</html>
