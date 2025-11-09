@@ -5,5 +5,6 @@ Disallow: /wifi/
 Disallow: /cv/documents/
 Disallow: /meet/
 Disallow: /divyanshi/
+Disallow: /cybersecurity/
 
 Sitemap: https://utkarshpandey.com/sitemap.xml
