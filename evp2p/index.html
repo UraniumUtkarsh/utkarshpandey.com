@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChargeMitra | P2P EV Charging Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary: #22c55e;
+            --secondary: #166534;
+            --dark: #0f172a;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #22c55e, #4ade80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-bg {
+            background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(15, 23, 42, 1), #020617);
+        }
+
+        .cite-link {
+            font-size: 0.7rem;
+            vertical-align: super;
+            color: #22c55e;
+            text-decoration: none;
+            margin-left: 2px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white">
+
+    <nav class="fixed w-full z-50 glass py-4 px-6 flex justify-between items-center">
+        <div class="text-2xl font-bold flex items-center gap-2">
+            <i class="fas fa-bolt text-green-500"></i> Charge<span class="text-green-500">Mitra</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-wider">
+            <a href="#problem" class="hover:text-green-400 transition">The Problem</a>
+            <a href="#how" class="hover:text-green-400 transition">How it Works</a>
+            <a href="#economics" class="hover:text-green-400 transition">Economics</a>
+            <a href="#impact" class="hover:text-green-400 transition">Impact</a>
+        </div>
+        <div class="flex gap-4">
+            <a href="https://github.com/UraniumUtkarsh" target="_blank" class="text-xl hover:text-green-400"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/uranium-utkarsh-pandey" target="_blank" class="text-xl hover:text-green-400"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </nav>
+
+    <section class="hero-bg min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+        [cite_start]<h1 class="text-5xl md:text-7xl font-bold mb-6">Powering India’s EV Revolution, <br><span class="gradient-text">One Neighbor at a Time.</span><a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 35]</a></h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-3xl mb-10">
+            [cite_start]Why wait for the government to build stations when your neighbor already has one?<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 42][cite_start]</a> Join the premier Peer-to-Peer EV charging community developed at SRMU.<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 1-7]</a>
+        </p>
+        <div class="flex gap-4">
+            <button class="bg-green-600 px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition">Become a Mitra</button>
+            <button class="border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition">Find a Charger</button>
+        </div>
+    </section>
+
+    <section id="problem" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                [cite_start]<h2 class="text-4xl font-bold mb-8 italic text-green-500">The "Infrastructure Gap"<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 34]</a></h2>
+                <div class="space-y-6 text-gray-300">
+                    [cite_start]<p class="flex gap-4"><i class="fas fa-city text-green-500 mt-1"></i> Public fast chargers are clustered in Tier-1 cities.<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 37]</a></p>
+                    [cite_start]<p class="flex gap-4"><i class="fas fa-map-marker-alt text-green-500 mt-1"></i> 70% of UP's chargers are in just 10 districts, leaving Purvanchal with barely 2% infrastructure.<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 59, 61]</a></p>
+                    [cite_start]<p class="flex gap-4"><i class="fas fa-battery-half text-green-500 mt-1"></i> Private home chargers sit unused for over 18 hours a day.<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 40]</a></p>
+                </div>
+            </div>
+            <div class="glass p-8 rounded-3xl border-green-500/20">
+                <div class="text-center mb-6">
+                    <span class="text-6xl font-bold text-green-500">0.66M+</span>
+                    [cite_start]<p class="text-gray-400">EVs Registered in Uttar Pradesh<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 59]</a></p>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-4 mb-4">
+                    <div class="bg-green-500 h-4 rounded-full" style="width: 70%"></div>
+                </div>
+                [cite_start]<p class="text-sm text-gray-500">Concentrated Infrastructure Trap<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 62]</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how" class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            [cite_start]<h2 class="text-center text-4xl font-bold mb-16">How ChargeMitra Works?<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 43]</a></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-3xl border-t-4 border-green-500">
+                    <i class="fas fa-house-user text-4xl text-green-500 mb-6"></i>
+                    [cite_start]<h3 class="text-2xl font-bold mb-4">The "Host" (Mitra)<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 44]</a></h3>
+                    <ul class="text-gray-400 space-y-3">
+                        [cite_start]<li>• List your wallbox in minutes<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 45]</a></li>
+                        [cite_start]<li>• Set your own hourly rates<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 46]</a></li>
+                        [cite_start]<li>• Earn passive income<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 47]</a></li>
+                    </ul>
+                </div>
+                <div class="glass p-10 rounded-3xl border-t-4 border-blue-500">
+                    <i class="fas fa-car-side text-4xl text-blue-500 mb-6"></i>
+                    [cite_start]<h3 class="text-2xl font-bold mb-4">The "User" (Driver)<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 49]</a></h3>
+                    <ul class="text-gray-400 space-y-3">
+                        [cite_start]<li>• Discover nearby nodes on map<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 50]</a></li>
+                        [cite_start]<li>• Book slots in advance<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 52]</a></li>
+                        [cite_start]<li>• Pay via UPI or Wallet<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 54]</a></li>
+                    </ul>
+                </div>
+                <div class="glass p-10 rounded-3xl border-t-4 border-purple-500">
+                    <i class="fas fa-shield-halved text-4xl text-purple-500 mb-6"></i>
+                    [cite_start]<h3 class="text-2xl font-bold mb-4">Trust Score<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 55]</a></h3>
+                    <ul class="text-gray-400 space-y-3">
+                        [cite_start]<li>• Dual-rating system<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 56]</a></li>
+                        <li>• Reliability Monitoring</li>
+                        <li>• Community Standards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="py-24 px-6 text-center">
+        [cite_start]<h2 class="text-4xl font-bold mb-4 text-green-500">Our Impact Roadmap<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 77]</a></h2>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-16">
+            <div class="glass p-6 rounded-xl">
+                [cite_start]<p>Partnering with local EV dealerships like MG and Tata Motors.<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 78, 79]</a></p>
+            </div>
+            <div class="glass p-6 rounded-xl">
+                [cite_start]<p>Scaling to Tier-2 & Tier-3 via "Asset-Light" model.<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 83]</a></p>
+            </div>
+        </div>
+        [cite_start]<p class="text-gray-400 mb-12">Aligned with 6 UN Sustainable Development Goals<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 104]</a></p>
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="bg-orange-600 p-4 rounded-lg w-32 h-32 flex flex-col justify-center items-center font-bold text-xs">
+                [cite_start]<span class="text-2xl">7</span> CLEAN ENERGY<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 91, 92]</a>
+            </div>
+            <div class="bg-red-800 p-4 rounded-lg w-32 h-32 flex flex-col justify-center items-center font-bold text-xs">
+                [cite_start]<span class="text-2xl">8</span> ECONOMIC GROWTH<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 100, 101]</a>
+            </div>
+            <div class="bg-orange-500 p-4 rounded-lg w-32 h-32 flex flex-col justify-center items-center font-bold text-xs">
+                [cite_start]<span class="text-2xl">9</span> INNOVATION<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 88, 89]</a>
+            </div>
+            <div class="bg-orange-400 p-4 rounded-lg w-32 h-32 flex flex-col justify-center items-center font-bold text-xs">
+                [cite_start]<span class="text-2xl">11</span> CITIES<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 97, 98]</a>
+            </div>
+            <div class="bg-yellow-600 p-4 rounded-lg w-32 h-32 flex flex-col justify-center items-center font-bold text-xs">
+                [cite_start]<span class="text-2xl">12</span> PRODUCTION<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 93, 94]</a>
+            </div>
+            <div class="bg-green-800 p-4 rounded-lg w-32 h-32 flex flex-col justify-center items-center font-bold text-xs">
+                [cite_start]<span class="text-2xl">13</span> CLIMATE ACTION<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 86, 87]</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/10 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500">
+            <div>
+                [cite_start]<p>Developed at <b>Shri Ramswaroop Memorial University</b><a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 1-7]</a></p>
+                [cite_start]<p class="text-sm">Team: Utkarsh Pandey, Prakhar Gupta, Ashutosh Patel<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 10-15]</a></p>
+            </div>
+            <div class="mt-6 md:mt-0 text-3xl flex gap-8">
+                <a href="https://github.com/UraniumUtkarsh" target="_blank" class="hover:text-white transition"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/uranium-utkarsh-pandey" target="_blank" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="text-center mt-10 text-green-500 font-bold text-xl uppercase tracking-widest">
+            Join the Charge. [cite_start]Become a Mitra!<a href="https://1drv.ms/p/c/e2ec663ecb1508cc/IQDN4iBQy6IOSayq08nEUisRAbTXXVtgmTSClmZHdsYaWzM?e=nf66VS" class="cite-link" target="_blank">[cite: 103]</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
