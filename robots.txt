@@ -6,5 +6,5 @@ Disallow: /cv/documents/
 Disallow: /meet/
 Disallow: /divyanshi/
 Disallow: /cybersecurity/
-
+Disallow: /evp2p/
 Sitemap: https://utkarshpandey.com/sitemap.xml
