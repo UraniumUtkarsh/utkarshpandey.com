@@ -1,135 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page not found ☢️</title>
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/assets/css.css" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      main {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 100vh;
-        text-align: center;
-        color: #fd5025;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-        margin-bottom: 10px;
-        text-shadow: 0 0 8px #cc2901, 0 0 16px #cc2901;
-        animation: flicker 1.5s infinite;
-      }
-
-      p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-      }
-
-      a {
-        text-decoration: none;
-        color: white;
-        background-color: #cc2901;
-        padding: 10px 20px;
-        border-radius: 20px;
-        transition: background-color 0.3s, box-shadow 0.3s;
-        font-size: 1rem;
-      }
-
-      a:hover {
-        background-color: #ff9a3b;
-        box-shadow: 0 0 10px #ff9a3b;
-      }
-
-      .decayed {
-        text-shadow: 0 0 5px #fd5025;
-        font-style: italic;
-      }
-      @keyframes flicker {
-        0%,
-        19%,
-        21%,
-        23%,
-        25%,
-        54%,
-        56%,
-        100% {
-          opacity: 1;
-        }
-        20%,
-        22%,
-        24%,
-        55% {
-          opacity: 0.4;
-        }
-      }
-
-      /* Responsive Webpage */
-      @media screen and (max-width: 720px) {
-        main{
-          padding: 0 10px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="left">Utkarsh's Portfolio</div>
-      </nav>
-    </header>
-
-    <main>
-      <h1>
-        <img src="/icons/warning.png" alt="Warning" /> UraniumUtkarsh Reactor Failure
-        <img src="/icons/warning.png" alt="Warning" />
-      </h1>
-      <p>
-        We scanned every port and endpoint but Dysprosium not detected.<br />
-        Trigger Warning: <span class="decayed">Uranium rods in meltdown</span>
-      </p>
-      <a href="/">Return to safety!</a>
-    </main>
-
-    <footer>
-      <div class="footer-rights">
-        Copyright &copy; utkarshpandey.com | All rights reserved
-      </div>
-    </footer>
-
-    <audio autoplay>
-      <source src="/assets/sound/nuclear-siren.mp3" type="audio/mpeg" />
-      Your browser does not support the audio tag.
-    </audio>
-    
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404: TARGET_NOT_FOUND</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-(async () => {
-  if (location.pathname.startsWith("/wifi/")) {
-    try {
-      const res = await fetch("/wifi/404.html");
-      if (res.ok) {
-        document.open();
-        document.write(await res.text());
-        document.close();
-      }
-    } catch (e) {
-      console.error("Could not load wifi-404:", e);
-    }
-  }
-})();
-</script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        header: ['Space Grotesk', 'sans-serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'DM Sans', sans-serif; letter-spacing: -0.01em; }
+        .header-font { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
+        .code-font { font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 flex items-center justify-center p-4 transition-colors duration-300">
 
-  </body>
+    <div class="w-full max-w-lg bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 p-6 md:p-8 rounded-2xl shadow-sm space-y-6 relative overflow-hidden">
+        
+        <div class="flex justify-between items-center border-b border-slate-200 dark:border-slate-800 pb-4">
+            <div class="flex items-center gap-2 text-xs code-font font-bold text-red-600 dark:text-red-400">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                <span>// ERROR_404: ROUTE_DEAD</span>
+            </div>
+            <span class="text-[10px] font-mono bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-500 dark:text-slate-400">v2.6.0_UPGRADE</span>
+        </div>
+
+        <div class="space-y-2">
+            <h1 class="text-6xl font-extrabold text-slate-900 dark:text-white header-font tracking-tighter">404</h1>
+            <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">
+                The compilation pipeline broke. The requested endpoint does not exist or has been re-indexed in our latest build system environment.
+            </p>
+        </div>
+
+        <div class="bg-blue-500/5 border border-blue-500/10 p-3.5 rounded-xl space-y-1">
+            <div class="text-[10px] code-font font-bold text-blue-600 dark:text-blue-400">// INFRASTRUCTURE_NOTICE</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                This environment has been officially upgraded to version <span class="font-bold text-slate-900 dark:text-slate-200">v2.6.0</span>. Legacy endpoint matrices from older deployment configurations have been deprecated.
+            </p>
+        </div>
+
+        <div class="space-y-3">
+            <div class="text-[10px] code-font font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Did you mean?</div>
+            <ul class="space-y-2 text-xs font-mono">
+                <li class="flex items-center gap-2 group">
+                    <span class="text-blue-500 group-hover:translate-x-1 transition-transform">→</span>
+                    <a href="https://www.utkarshpandey.com" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 underline decoration-slate-300 dark:decoration-slate-700 underline-offset-4 transition-colors">www.utkarshpandey.com (Main Hub)</a>
+                </li>
+                <li class="flex items-center gap-2 group">
+                    <span class="text-blue-500 group-hover:translate-x-1 transition-transform">→</span>
+                    <a href="https://www.utkarshpandey.com/v1/portfolio/" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 underline decoration-slate-300 dark:decoration-slate-700 underline-offset-4 transition-colors">utkarshpandey.com/v1/portfolio/</a>
+                </li>
+                <li class="flex items-center gap-2 group">
+                    <span class="text-blue-500 group-hover:translate-x-1 transition-transform">→</span>
+                    <a href="https://www.utkarshpandey.com/v1/dashboards" class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 underline decoration-slate-300 dark:decoration-slate-700 underline-offset-4 transition-colors">utkarshpandey.com/v1/dashboards</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-[11px] font-mono text-slate-400 dark:text-slate-500">
+            <div>Auto-routing to main node in <span id="countdown" class="font-bold text-blue-500">10</span>s...</div>
+            <a href="/index.html" class="hover:text-slate-900 dark:hover:text-slate-100 underline transition-colors">[FORCE_RETURN]</a>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 10;
+        const countdownElement = document.getElementById('countdown');
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            if (countdownElement) countdownElement.innerText = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = '/index.html';
+            }
+        }, 1000);
+    </script>
+</body>
 </html>
-
-

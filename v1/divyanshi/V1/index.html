@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Happy Birthday, Divyanshi 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<!-- LOCKSCREEN -->
+<div id="lockscreen" class="lockscreen">
+<div class="lock-card">
+<h2>Restricted — Birthday Surprise 🔐</h2>
+<p class="hint">Hint: Divyanshi's birthday (DDMM)</p>
+<input id="passcode" type="password" placeholder="Enter passcode (DDMM)" maxlength="4" inputmode="numeric">
+<button id="unlockBtn">Unlock</button>
+<p id="lockMsg" class="lock-msg"></p>
+</div>
+<div class="floating-icons">
+<span>🎂</span><span>🎈</span><span>🥳</span><span>✨</span>
+</div>
+</div>
+
+
+<!-- MAIN CONTENT (hidden until unlocked) -->
+<div id="app" class="app hidden">
+<header class="hero">
+<div class="left">
+<h1 id="title">Happy Birthday, Divyanshi 🎂</h1>
+<p id="quote" class="quote">"तस्माद् विजानाति सदा यः स्नेहं कुरुते हृदयात्"</p>
+<p class="sub">(A little sarcasm, a lot of heart — specially for the squirrel-lover 💙🐿️)</p>
+</div>
+<div class="photo">
+<img id="heroPhoto" src="assets/images/divyanshi.jpg" alt="Divyanshi">
+</div>
+</header>
+
+
+<!-- Carousel -->
+<div class="carousel" id="carousel">
+<button class="prev">❮</button>
+<button class="next">❯</button>
+<!-- Images: can be public URLs or local files -->
+<img src="assets/images/div1.jpg" class="active" alt="pic1">
+<img src="assets/images/div2.jpg" alt="pic2">
+<img src="assets/images/div3.jpg" alt="pic3">
+<img src="assets/images/div4.jpg" alt="pic4">
+</div>
+
+
+<!-- Wishes Grid -->
+<section class="section">
+<h2>Birthday Wishes — sarcastic & sincere 💖</h2>
+<div class="grid" id="wishesGrid"></div>
+</section>
+
+
+<footer>
+Made with ❤️ by Utkarsh • Happy Birthday again, Divyanshi.
+</footer>
+</div>
+
+
+<!-- Background audio (mild) -->
+<audio id="bgAudio" loop preload="auto">
+<source src="assets/music/soft-piano.mp3" type="audio/mpeg">
+</audio>
+
+
+<script src="assets/script.js"></script>
+</body>
+</html>

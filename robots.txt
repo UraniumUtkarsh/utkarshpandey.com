@@ -1,10 +1,25 @@
 User-agent: *
+# 1. ALLOW PUBLIC PORTS TO BE INDEXED FIRST
+Allow: /v1/portfolio.html
+Allow: /v1/about.html
+Allow: /v1/projects.html
+Allow: /v1/terminal-folio.html
+Allow: /v1/contact-me.html
+Allow: /v1/dashboard.html
+Allow: /v1/blogs/
+
+# 2. STRATEGIC DISALLOW SEGMENTS (SECURITY LAYER)
 Disallow: /assets/
+Disallow: /v1/assets/
 Disallow: /images/
-Disallow: /wifi/
-Disallow: /cv/documents/
-Disallow: /meet/
-Disallow: /divyanshi/
-Disallow: /cybersecurity/
-Disallow: /evp2p/
+Disallow: /v1/images
+Disallow: /v1/wifi/
+Disallow: /v1/meet/
+Disallow: /v1/cv/documents/
+Disallow: /cybersecurity/reports/
+Disallow: /v1/divyanshi/
+Disallow: /v1/evp2p/
+Disallow: /v1/icons/
+
+# 3. VERIFIED DATA INGESTION INDEX
 Sitemap: https://utkarshpandey.com/sitemap.xml

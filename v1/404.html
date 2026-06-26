@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found ☢️</title>
+    <link rel="icon" href="/v1/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/v1/assets/css.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        color: #fd5025;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        text-shadow: 0 0 8px #cc2901, 0 0 16px #cc2901;
+        animation: flicker 1.5s infinite;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        background-color: #cc2901;
+        padding: 10px 20px;
+        border-radius: 20px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        font-size: 1rem;
+      }
+
+      a:hover {
+        background-color: #ff9a3b;
+        box-shadow: 0 0 10px #ff9a3b;
+      }
+
+      .decayed {
+        text-shadow: 0 0 5px #fd5025;
+        font-style: italic;
+      }
+      @keyframes flicker {
+        0%,
+        19%,
+        21%,
+        23%,
+        25%,
+        54%,
+        56%,
+        100% {
+          opacity: 1;
+        }
+        20%,
+        22%,
+        24%,
+        55% {
+          opacity: 0.4;
+        }
+      }
+
+      /* Responsive Webpage */
+      @media screen and (max-width: 720px) {
+        main{
+          padding: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Utkarsh's Portfolio</div>
+      </nav>
+    </header>
+
+    <main>
+      <h1>
+        <img src="/v1/icons/warning.png" alt="Warning" /> UraniumUtkarsh Reactor Failure
+        <img src="/v1/icons/warning.png" alt="Warning" />
+      </h1>
+      <p>
+        We scanned every port and endpoint but Dysprosium not detected.<br />
+        Trigger Warning: <span class="decayed">Uranium rods in meltdown</span>
+      </p>
+      <a href="/">Return to safety!</a>
+    </main>
+
+    <footer>
+      <div class="footer-rights">
+        Copyright &copy; utkarshpandey.com | All rights reserved
+      </div>
+    </footer>
+
+    <audio autoplay>
+      <source src="/v1/assets/sound/nuclear-siren.mp3" type="audio/mpeg" />
+      Your browser does not support the audio tag.
+    </audio>
+    
+    <script>
+(async () => {
+  if (location.pathname.startsWith("/wifi/")) {
+    try {
+      const res = await fetch("/v1/wifi/404.html");
+      if (res.ok) {
+        document.open();
+        document.write(await res.text());
+        document.close();
+      }
+    } catch (e) {
+      console.error("Could not load wifi-404:", e);
+    }
+  }
+})();
+</script>
+
+  </body>
+</html>
+
+

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, Divyanshi 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #f8f4ff;
+      --bg2: #fff0f6;
+      --accent: #7b61ff;
+      --muted: #6b6b6b;
+      --card: #ffffff;
+      --glass: rgba(255,255,255,0.6);
+      --shadow: 0 6px 18px rgba(98,84,255,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,Arial;
+      background: linear-gradient(120deg,var(--bg1),var(--bg2));
+      -webkit-font-smoothing:antialiased;
+      color:#222;
+      padding:28px 20px 60px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+
+    /* Header */
+    header.hero{
+      display:flex;gap:20px;align-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.45));
+      padding:22px;border-radius:16px;box-shadow:var(--shadow);backdrop-filter: blur(6px);
+    }
+    .hero .left{flex:1}
+    .hero h1{font-family:'Pacifico';margin:0;font-size:36px;color:var(--accent)}
+    .hero p{margin:8px 0 0;color:var(--muted)}
+    .hero .photo{width:160px;height:160px;border-radius:12px;overflow:hidden;flex-shrink:0}
+    .hero .photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Wishes grid */
+    .section{margin-top:22px}
+    .section h2{margin:0 0 14px;font-size:20px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{
+      background:var(--card);border-radius:12px;padding:16px;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+      min-height:180px;display:flex;flex-direction:column;justify-content:space-between
+    }
+    .card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 18px 40px rgba(123,97,255,0.12)}
+
+    .card .meta{display:flex;gap:12px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:10px;overflow:hidden;flex-shrink:0}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .from{font-weight:600}
+    .msg{margin-top:10px;color:#333;line-height:1.35}
+
+    .card .badge{font-size:12px;padding:6px 8px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#ff7ab6);color:white;display:inline-block}
+
+    /* overlay play */
+    .card .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.35));opacity:0;transition:opacity .18s;display:flex;align-items:flex-end;justify-content:center;padding:12px}
+    .card:hover .overlay{opacity:1}
+    .play-btn{background:rgba(255,255,255,0.95);border-radius:999px;padding:10px 14px;font-weight:700;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+
+    /* modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,10,12,0.6);z-index:50;padding:22px}
+    .modal.show{display:flex}
+    .modal .frame{width:min(900px,96%);background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));border-radius:12px;padding:10px;box-shadow:0 40px 120px rgba(2,6,23,0.6)}
+    .modal video{width:100%;height:auto;border-radius:8px;display:block}
+    .modal .close{position:absolute;top:20px;right:26px;background:transparent;border:2px solid white;color:white;padding:8px;border-radius:8px;cursor:pointer}
+
+    /* footer */
+    footer{margin-top:28px;text-align:center;color:var(--muted)}
+
+    /* audio control */
+    .audio-controls{position:fixed;left:20px;bottom:18px;background:var(--glass);padding:8px 12px;border-radius:999px;display:flex;gap:8px;align-items:center;box-shadow:var(--shadow)}
+    .audio-controls button{border:0;background:transparent;cursor:pointer;font-weight:600}
+    .audio-controls .label{font-size:13px;color:#333}
+
+    /* small screens tweaks */
+    @media (max-width:600px){
+      .hero{flex-direction:column;align-items:flex-start}
+      .hero .photo{width:100%;height:220px;border-radius:10px}
+      .avatar{width:46px;height:46px}
+      .audio-controls{left:auto;right:16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="left">
+        <h1>Happy Birthday, Divyanshi 🎂</h1>
+        <p>Finally another year of being fabulously you — sarcastic remarks included, feelings non-returnable. Enjoy the cake.</p>
+      </div>
+      <div class="photo">
+        <!-- Replace 'assets/images/divyanshi.jpg' with the real image -->
+        <img src="assets/images/divyanshi.jpg" alt="Divyanshi">
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Birthday Wishes — slightly rude, mostly warm 💖</h2>
+      <div class="grid" id="wishesGrid">
+        <!-- Cards will be injected by JS -->
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How this works</h2>
+      <p style="color:var(--muted);margin-top:8px">Hover a card to see it pop. Click the <strong>Play</strong> button to open the video popup. Use the music control at the bottom-left to toggle background piano.</p>
+    </section>
+
+    <footer>
+      Made with ❤️ by Utkarsh • Happy Birthday again, Divyanshi.
+    </footer>
+  </div>
+
+  <!-- Audio control -->
+  <div class="audio-controls" id="audioControls">
+    <button id="toggleAudio">▶ Play music</button>
+    <div class="label">Soft piano</div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="videoModal" aria-hidden="true">
+    <button class="close" id="closeModal">✕</button>
+    <div class="frame">
+      <video id="modalVideo" controls playsinline></video>
+    </div>
+  </div>
+
+  <!-- Hidden audio element -->
+  <audio id="bgAudio" loop preload="auto">
+    <!-- Replace with your soft piano file at assets/music/piano.mp3 -->
+    <source src="assets/music/soft-piano.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Sample data: replace 'assets/videos/...' with actual mp4 files or video hosting links
+    const wishes = [
+      {
+        from: 'Mehul',
+        avatar: 'assets/images/mehul.jpg',
+        short: "Another year wiser? Nah, you're just better at dodging responsibilities.",
+        note: "Keep slaying, even while being late to meetings.",
+        video: 'assets/videos/mehul-wish.mp4'
+      },
+      {
+        from: 'Ananya',
+        avatar: 'assets/images/ananya.jpg',
+        short: "If sarcasm were an Olympic sport, you'd have the gold.",
+        note: "Proud of you — for putting up with us. Lots of love.",
+        video: 'assets/videos/ananya-wish.mp4'
+      },
+      {
+        from: 'Rohit',
+        avatar: 'assets/images/rohit.jpg',
+        short: "Happy level-up day. May your wifi be fast and your coffee stronger.",
+        note: "Thanks for being the reasonable one in the group chat.",
+        video: 'assets/videos/rohit-wish.mp4'
+      },
+      {
+        from: 'Sana',
+        avatar: 'assets/images/sana.jpg',
+        short: "You're rare, annoying, and beloved. In that order.",
+        note: "Keep being delightfully you.",
+        video: 'assets/videos/sana-wish.mp4'
+      }
+    ];
+
+    const grid = document.getElementById('wishesGrid');
+    function createCard(w){
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.innerHTML = `
+        <div class="meta">
+          <div class="avatar"><img src="${w.avatar}" alt="${w.from}"></div>
+          <div>
+            <div class="from">${w.from} <span class="badge">Friend</span></div>
+            <div class="msg">${w.short}</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;color:var(--muted)">${w.note}</div>
+        <div class="overlay">
+          <button class="play-btn" data-video="${w.video}">Play ▶</button>
+        </div>
+      `;
+      return div;
+    }
+
+    // render cards
+    wishes.forEach(w => grid.appendChild(createCard(w)));
+
+    // Modal logic
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeModal = document.getElementById('closeModal');
+
+    document.body.addEventListener('click', e => {
+      const btn = e.target.closest('.play-btn');
+      if(btn){
+        const src = btn.getAttribute('data-video');
+        openModalWith(src);
+      }
+    });
+
+    function openModalWith(src){
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden','false');
+      modalVideo.src = src;
+      modalVideo.currentTime = 0;
+      modalVideo.play().catch(()=>{});
+    }
+    function closeModalFn(){
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden','true');
+      modalVideo.pause();
+      modalVideo.src = '';
+    }
+    closeModal.addEventListener('click', closeModalFn);
+    modal.addEventListener('click', e=>{
+      if(e.target === modal) closeModalFn();
+    });
+
+    // Audio controls
+    const bg = document.getElementById('bgAudio');
+    const toggleAudio = document.getElementById('toggleAudio');
+    let audioPlaying = false;
+
+    toggleAudio.addEventListener('click', ()=>{
+      if(!audioPlaying){
+        bg.play().catch(()=>{});
+        toggleAudio.textContent = '⏸ Pause music';
+        audioPlaying = true;
+      } else {
+        bg.pause();
+        toggleAudio.textContent = '▶ Play music';
+        audioPlaying = false;
+      }
+    });
+
+    // Try muted autoplay (some browsers allow muted autoplay)
+    window.addEventListener('load', ()=>{
+      bg.volume = 0.35;
+      bg.muted = true;
+      bg.play().then(()=>{
+        // If autoplay (muted) worked we show user how to unmute
+        setTimeout(()=>{
+          bg.muted = false; // keep it unmuted if browser allows
+        }, 400);
+      }).catch(()=>{
+        // user must press play
+      });
+    });
+
+    // small accessibility: keyboard close modal
+    document.addEventListener('keydown', e=>{
+      if(e.key === 'Escape' && modal.classList.contains('show')) closeModalFn();
+    });
+
+  </script>
+</body>
+</html>

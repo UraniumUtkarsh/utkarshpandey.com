@@ -1,0 +1,42 @@
+[
+    {
+  "category": "BIO / EXPERIENCE",
+  "accentColor": "amber",
+  "title": "Engineering Credentials",
+  "description": "B.Tech Computer Science specializing in Cybersecurity. Mapping academic workflows, collaborative engineering side-quests, and professional tool implementations.",
+  "redirectLink": "/v1/assets/Utkarsh_Pandey_CV.pdf",
+  "isWide": false,
+  "thumbnail": "assets/images/thumbnail.jpg",
+  "status": "live"
+},
+  {
+    "category": "DIGITAL_GARDEN",
+    "accentColor": "emerald",
+    "title": "Tech, Architecture & Ideas",
+    "description": "An open digital garden tracking software engineering trends, personal project building blocks, security notes, and raw developmental side-quests.",
+    "redirectLink": "https://utkarshblogs.in",
+    "isWide": true,
+    "thumbnail": "assets/images/utkarshblogs.png",
+    "status": "live"
+  },
+  {
+    "category": "DEV_SPACE / SE",
+    "accentColor": "blue",
+    "title": "Developer Portfolio",
+    "description": "Full-stack application platforms, system architectures, API engineering assets, and scalable deployment pipelines built with Python and the MERN stack.",
+    "redirectLink": "https://utkarshpandey.com/v1/portfolio",
+    "isWide": false,
+    "thumbnail": "assets/images/thumbnail.jpg",
+    "status": "live"
+  },
+  {
+    "category": "SECOPS / OFFENSIVE",
+    "accentColor": "red",
+    "title": "Cybersecurity Portfolio",
+    "description": "Vulnerability Assessment and Penetration Testing (VAPT) metrics, defensive implementation tooling, identity architecture configurations, and CTF write-ups.",
+    "redirectLink": "https://cyber.utkarshpandey.com",
+    "isWide": false,
+    "thumbnail": "assets/images/thumbnail.jpg",
+    "status": "live"
+  }
+]

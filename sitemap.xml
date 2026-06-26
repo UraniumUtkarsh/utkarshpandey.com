@@ -1,31 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- 1. ROOT LANDING INTERFACE -->
   <url>
     <loc>https://utkarshpandey.com/</loc>
-    <priority>1.00</priority>
+    <lastmod>2026-06-27</lastmod>
+  </url>
+
+  <!-- 2. NEW ROOT CYBERSECURITY SECTOR -->
+  <url>
+    <loc>https://utkarshpandey.com/cybersecurity</loc>
+    <lastmod>2026-06-27</lastmod>
+  </url>
+
+  <!-- 3. MIGRATED VERSION 1 (v1) CORE ROUTING PATHS -->
+  <url>
+    <loc>https://utkarshpandey.com/v1/portfolio.html</loc>
+    <lastmod>2026-06-27</lastmod>
   </url>
   <url>
-    <loc>https://utkarshpandey.com/about.html</loc>
-    <priority>0.9</priority>
+    <loc>https://utkarshpandey.com/v1/about.html</loc>
+    <lastmod>2026-06-27</lastmod>
   </url>
   <url>
-    <loc>https://utkarshpandey.com/projects.html</loc>
-    <priority>0.8</priority>
+    <loc>https://utkarshpandey.com/v1/projects.html</loc>
+    <lastmod>2026-06-27</lastmod>
   </url>
   <url>
-    <loc>https://utkarshpandey.com/terminal-folio.html</loc>
-    <priority>0.9</priority>
+    <loc>https://utkarshpandey.com/v1/terminal-folio.html</loc>
+    <lastmod>2026-06-27</lastmod>
   </url>
   <url>
-    <loc>https://utkarshpandey.com/contact-me.html</loc>
+    <loc>https://utkarshpandey.com/v1/contact-me.html</loc>
+    <lastmod>2026-06-27</lastmod>
   </url>
   <url>
-    <loc>https://cyber.utkarshpandey.com/</loc>
-    <priority>0.8</priority>
+    <loc>https://utkarshpandey.com/v1/dashboard.html</loc>
+    <lastmod>2026-06-27</lastmod>
   </url>
+
+  <!-- 4. BLOG MATRIX POINTERS -->
   <url>
-    <loc>https://utkarshpandey.com/blogs/power-grid-industrial-visit.html</loc>
+    <loc>https://utkarshpandey.com/v1/blogs/power-grid-industrial-visit.html</loc>
+    <lastmod>2026-06-27</lastmod>
   </url>
+
 </urlset>
