@@ -7,7 +7,7 @@
 // Global Environmental Configurations
 const GITHUB_USERNAME = "UraniumUtkarsh";
 const REPO_NAME = "utkarshpandey.com";
-const SLIDESHOW_FOLDER_PATH = "images";
+const SLIDESHOW_FOLDER_PATH = "Live_Snapshot_Stream";
 
 // UI Core State Management Objects
 let slideItems = [];
@@ -234,38 +234,38 @@ async function loadBentoGridConfig() {
 }
 
 /**
- * 5. HIGH-STABILITY CORES-PROXY SYSTEM STATUS ENGINE
- * Implements strict live timestamp cache-busting logic to prevent 502/404 ghosting
+ * 5. HIGH-STABILITY NATIVE DOMAIN STATUS ENGINE
+ * Taps client-side fetch mechanics to confirm server node availability safely.
  */
 async function checkNodeStatus(url, elementId) {
   const statusContainer = document.getElementById(elementId);
   if (!statusContainer) return;
 
-  const cacheBuster = new Date().getTime();
+  // Cache-busting parameter isolates past session footprints
+  const cacheBuster = Date.now();
   const targetWithBuster = url.includes("?")
     ? `${url}&_cb=${cacheBuster}`
     : `${url}?_cb=${cacheBuster}`;
-  const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetWithBuster)}`;
 
   try {
-    const response = await fetch(proxyUrl, {
-      method: "GET",
+    // Fire a low-overhead HEAD request directly to the target node
+    await fetch(targetWithBuster, {
+      method: "HEAD",
+      mode: "no-cors",
       cache: "no-store",
     });
 
-    if (response.ok) {
-      statusContainer.innerHTML = `
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)] animate-pulse"></span>
-                <span class="text-emerald-600 dark:text-emerald-400 text-[10px] tracking-wider">ONLINE</span>
-            `;
-    } else {
-      throw new Error("Node threw error header response (e.g. 502/500/404)");
-    }
-  } catch (error) {
+    // If the promise resolves, the target endpoint answered and is active
     statusContainer.innerHTML = `
-            <span class="w-1.5 h-1.5 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></span>
-            <span class="text-red-600 dark:text-red-400 text-[10px] tracking-wider">OFFLINE</span>
-        `;
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)] animate-pulse"></span>
+      <span class="text-emerald-600 dark:text-emerald-400 text-[10px] tracking-wider font-bold">ONLINE</span>
+    `;
+  } catch (error) {
+    // Network failures or unreachable configurations trigger the fault vector
+    statusContainer.innerHTML = `
+      <span class="w-1.5 h-1.5 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></span>
+      <span class="text-red-600 dark:text-red-400 text-[10px] tracking-wider font-bold">OFFLINE</span>
+    `;
   }
 }
 
