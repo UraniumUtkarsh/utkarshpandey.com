@@ -85,83 +85,67 @@ function initializeDrawerMechanics() {
 }
 
 /**
- * 3. AUTOMATED REPOSITORY IMAGES STREAM ENGINE
- * Extracts raw picture links directly from your GitHub master branch
+ * 7. REPOSITORY LIVE SNAPSHOT LOGISTICS ENGINE
+ * Resolves directory trees dynamically via GitHub Content APIs
  */
-async function fetchImagesFromGithub() {
-  const container = document.getElementById("slideshow-container");
-  const statusMsg = document.getElementById("gallery-status");
+async function initializeGitSnapshotStream() {
+  const GITHUB_USERNAME = "UraniumUtkarsh";
+  const REPO_NAME = "utkarshpandey.com";
+  const SLIDESHOW_FOLDER_PATH = "Live_Snapshot_Stream";
+  
+  // Target container ID where your image cards render (Verify this matches your HTML)
+  const streamContainer = document.getElementById("snapshot-stream-display"); 
+  if (!streamContainer) return;
 
-  if (!container) return;
+  // CORRECT API ENDPOINT: Maps to the target repository content port
+  const targetApiUrl = `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${SLIDESHOW_FOLDER_PATH}`;
 
   try {
-    const response = await fetch(
-      `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${SLIDESHOW_FOLDER_PATH}`,
-    );
-    if (!response.ok) throw new Error("GitHub API Access Denied");
+    const response = await fetch(targetApiUrl, {
+      method: "GET",
+      headers: { "Accept": "application/vnd.github.v3+json" }
+    });
 
-    const files = await response.json();
-    // Extract common image file types cleanly using safe regex filters
-    const imageFiles = files.filter((file) =>
-      /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(file.name),
-    );
-
-    if (imageFiles.length === 0) {
-      if (statusMsg) statusMsg.innerText = "NO_IMGS_IN_TARGET_DIR";
-      return;
+    if (!response.ok) {
+      throw new Error(`HTTP network vector mismatch: Status ${response.status}`);
     }
 
-    container.innerHTML = ""; // Wipe loading indicator
+    const files = await response.json();
+    
+    // Filter array to ensure we isolate image types (png, jpg, jpeg, webp)
+    const images = files.filter(file => 
+      file.type === "file" && /\.(png|jpe?g|webp|gif)$/i.test(file.name)
+    );
 
-    imageFiles.forEach((file, index) => {
-      const slideDiv = document.createElement("div");
-      slideDiv.className = `absolute inset-0 transition-opacity duration-700 flex items-center justify-center ${index === 0 ? "opacity-100" : "opacity-0"}`;
+    if (images.length === 0) {
+      throw new Error("Target folder array empty or void of valid graphics assets.");
+    }
 
-      const img = document.createElement("img");
-      img.src = file.download_url; // Directly target the raw raw.githubusercontent pipeline
-      img.alt = file.name;
-      img.className = "w-full h-full object-contain rounded-xl p-2";
-      img.loading = "lazy";
-
-      slideDiv.appendChild(img);
-      container.appendChild(slideDiv);
-      slideItems.push(slideDiv);
+    // Clear loading/error nodes and inject the clean dynamic layout
+    streamContainer.innerHTML = "";
+    
+    images.forEach(img => {
+      // Use the download_url parameter to pull the raw image source file directly
+      const imgElement = document.createElement("img");
+      imgElement.src = img.download_url;
+      imgElement.alt = `Repository Snapshot: ${img.name}`;
+      imgElement.className = "rounded-xl border border-slate-200 dark:border-slate-850 max-h-[152px] object-cover";
+      streamContainer.appendChild(imgElement);
     });
 
-    initSliderControls();
-  } catch (err) {
-    console.error(err);
-    if (statusMsg) statusMsg.innerText = "COULD_NOT_ESTABLISH_GIT_STREAM";
+  } catch (error) {
+    console.error("Git Stream Fault:", error);
+    // Graceful visual fallback matches your terminal grid styling
+    streamContainer.innerHTML = `
+      <div class="text-center py-4 font-mono text-[11px] text-red-500/80 w-full">
+        <span>↳ [CONNECTION_ERROR]: Failed to compile image vectors from ${SLIDESHOW_FOLDER_PATH}.</span>
+      </div>
+    `;
   }
 }
 
-function initSliderControls() {
-  const prevBtn = document.getElementById("prev-slide");
-  const nextBtn = document.getElementById("next-slide");
-
-  if (slideItems.length <= 1) return;
-
-  function changeSlide(nextIndex) {
-    slideItems[currentSlide].classList.replace("opacity-100", "opacity-0");
-    currentSlide = (nextIndex + slideItems.length) % slideItems.length;
-    slideItems[currentSlide].classList.replace("opacity-0", "opacity-100");
-  }
-
-  if (nextBtn)
-    nextBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      changeSlide(currentSlide + 1);
-    });
-  if (prevBtn)
-    prevBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      changeSlide(currentSlide - 1);
-    });
-
-  // Automated carousel cycle (5000ms delay configuration)
-  setInterval(() => changeSlide(currentSlide + 1), 5000);
-}
-
+// Call on load
+initializeGitSnapshotStream();
 /**
  * 4. ASYNCHRONOUS BENTO GRID CONFIGURATION PARSER (Upgraded with Thumbnails)
  * Decouples layout configurations and renders local/remote visual media blocks cleanly
